@@ -1,3 +1,4 @@
+tailwind.config = {
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -69,6 +70,93 @@
                         "gutter": "16px"
                     },
                     "fontFamily": {
+                        "headline-md": [
+                            "Quicksand"
+                        ],
+                        "headline-lg": [
+                            "Quicksand"
+                        ],
+                        "headline-lg-mobile": [
+                            "Quicksand"
+                        ],
+                        "label-md": [
+                            "Open Sans"
+                        ],
+                        "label-sm": [
+                            "Open Sans"
+                        ],
+                        "body-md": [
+                            "Open Sans"
+                        ],
+                        "display-lg": [
+                            "Quicksand"
+                        ],
+                        "body-lg": [
+                            "Open Sans"
+                        ]
+                    },
+                    "fontSize": {
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "28px",
+                            {
+                                "lineHeight": "36px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "label-md": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
                         "headline-md": ["Quicksand"],
                         "headline-lg": ["Quicksand"],
                         "headline-lg-mobile": ["Quicksand"],
