@@ -1,19 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[url('../assets/bgLogin.png')] min-h-screen bg-cover bg-center bg-no-repeat">
-    <div class="container-login flex flex-col items-center justify-center min-h-screen">
-        <div class="wrapper-login bg-[#FFFFFF] p-10 shadow-lg rounded-lg text-center">
-            <div class="title text-xl font-bold">Welcome Back</div>
-            <div class="desc text-sm">Sign in to continue your discovery.</div>
 
-            
-        </div>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - Wilderness &amp; Discovery</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Quicksand:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script src="../js/tailwind.js"></script>
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body-md min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Blurred Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img alt="Blurred wildlife background" class="w-full h-full object-cover filter blur-md opacity-30"
+            data-alt="A softly blurred, high-quality photograph of a tranquil savanna at dawn, featuring silhouettes of acacia trees and distant giraffes against a warm, pastel-colored sunrise sky. The image is rendered with a shallow depth of field to create a serene, ambient background texture that complements the modern, naturalistic UI of the application. The lighting is soft and golden, imparting a calm and inviting mood."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg2OQckHMViVdWSc7IGRlHMjPhEG9zhIJts5q6a61KjT9z5s_xGu2LuLZdBAkFAdSu5lqIfTW5Ql_9IuL6eBQ1RnAhQZLA4yvwSnheXu2UEcqO8ylImSX7NOnr_Pyqi549lUpKL2KnzKVtOjaLH40Qx1H8y_K7RBrWUo35cbw49wc_79dd46BUv5QKWNuzSkZ4DQkhC7wDfSKA6lyQX8Zvo9ug7cCrLPYZ3tbcUSPn1ear-5ZZZMm40igbOhfhkyJDAnpWXzHO3JY" />
     </div>
+    <!-- Login Container -->
+    <main class="relative z-10 w-full max-w-md px-margin-mobile md:px-0">
+        <!-- Glassmorphism Card -->
+        <div
+            class="bg-surface-container-lowest/80 backdrop-blur-lg rounded-xl border border-surface-dim shadow-[0_8px_32px_rgba(1,45,29,0.08)] overflow-hidden">
+            <div class="p-lg">
+                <!-- Branding -->
+                <div class="text-center mb-lg">
+                    <h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Welcome Back</h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your discovery.</p>
+                </div>
+                <!-- Form -->
+                <form action="#" class="space-y-md" method="POST">
+                    <!-- Email Field -->
+                    <div>
+                        <label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email /
+                            Username</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline"
+                                style="font-variation-settings: 'FILL' 0;">person</span>
+                            <input
+                                class="w-full pl-[40px] pr-sm py-sm bg-surface rounded-md border-2 border-surface-dim focus:border-primary focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-outline-variant transition-colors"
+                                id="email" name="email" placeholder="explorer@example.com" required="" type="text" />
+                        </div>
+                    </div>
+                    <!-- Password Field -->
+                    <div>
+                        <label class="block font-label-md text-label-md text-on-surface mb-xs"
+                            for="password">Password</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline"
+                                style="font-variation-settings: 'FILL' 0;">lock</span>
+                            <input
+                                class="w-full pl-[40px] pr-sm py-sm bg-surface rounded-md border-2 border-surface-dim focus:border-primary focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-outline-variant transition-colors"
+                                id="password" name="password" placeholder="••••••••" required="" type="password" />
+                        </div>
+                        <div class="flex justify-end mt-xs">
+                            <a class="font-label-sm text-label-sm text-secondary hover:text-secondary-container transition-colors"
+                                href="#">Forgot password?</a>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <button
+                        class="w-full py-sm bg-primary text-on-primary rounded-full font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all shadow-sm"
+                        type="submit">
+                        Sign In
+                    </button>
+                </form>
+                <!-- Divider -->
+                <div class="flex items-center my-md">
+                    <div class="flex-grow border-t border-surface-variant"></div>
+                    <span class="mx-sm font-label-sm text-label-sm text-outline">or connect with</span>
+                    <div class="flex-grow border-t border-surface-variant"></div>
+                </div>
+            <!-- Registration Link -->
+            <div class="bg-surface-container-low p-md text-center border-t border-surface-dim">
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    New to the park?
+                    <a class="font-label-md text-label-md text-primary font-bold hover:text-secondary underline decoration-secondary decoration-2 underline-offset-4 transition-colors"
+                        href="#">Join the Discovery</a>
+                </p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
