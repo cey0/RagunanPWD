@@ -1,4 +1,5 @@
-:root {  /* Selector khusus untuk mendefinisikan variabel CSS global. */ 
+:root {
+    /* Selector khusus untuk mendefinisikan variabel CSS global. */
     --cream: #f5f0e8;
     --dark: #1a1a14;
     --green-deep: #1e3a2f;
@@ -11,10 +12,14 @@
     --border: #e0d8cc;
 }
 
-* { /* {: Selector universal yang memilih semua elemen di halaman. */
-    margin: 0; /* Menghapus jarak luar bawaan browser */
-    padding: 0; /* Menghapus jarak dalam bawaan browser */
-    box-sizing: border-box; /* Memastikan padding dan border tidak menambah lebar/tinggi total elemen */
+* {
+    /* {: Selector universal yang memilih semua elemen di halaman. */
+    margin: 0;
+    /* Menghapus jarak luar bawaan browser */
+    padding: 0;
+    /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;
+    /* Memastikan padding dan border tidak menambah lebar/tinggi total elemen */
 }
 
 body {
@@ -41,8 +46,8 @@ nav {
 
 .nav-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: var(--dark);
 }
 
@@ -173,6 +178,63 @@ nav {
     color: var(--text-muted);
     max-width: 380px;
     margin-bottom: 2rem;
+}
+
+/* 1. Biarkan .hero tetap di tengah (jangan ubah max-width/margin yang sudah ada) */
+.hero {
+    position: relative;
+    /* WAJIB ada */
+    /* JANGAN hapus max-width atau margin: 0 auto jika itu yang bikin kontenmu rapi di tengah */
+    /* Pastikan tidak ada overflow: hidden di sini */
+    overflow: visible;
+}
+
+/* 2. Trik Background Full Width menggunakan ::before */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* Titik tengah container .hero */
+    transform: translateX(-50%);
+    /* Geser ke kiri separuh lebar layar */
+    width: 100vw;
+    /* Lebar penuh layar */
+    height: 100%;
+    background-image: url('../html/background.jpg');
+    /* Ganti path gambar */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Taruh di belakang konten */
+}
+
+/* 3. Overlay (Warna tipis di atas gambar agar teks terbaca) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: rgba(245, 240, 232, 0.5);
+    /* Atur ketebalan di sini (0.0 - 1.0) */
+    z-index: -1;
+}
+
+/* Stats section juga full width (opsional) */
+.stats {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 60px 5%;
+}
+
+.booking-card {
+    background: rgba(255, 255, 255, 0.95);
+    /* Kartu booking semi-transparan */
+    backdrop-filter: blur(10px);
 }
 
 /* BOOKING CARD */
@@ -476,6 +538,7 @@ nav {
     font-size: 0.95rem;
 }
 
+
 /* NEWSLETTER */
 .newsletter {
     margin: 0 auto 70px;
@@ -562,6 +625,7 @@ nav {
     color: rgba(255, 255, 255, 0.35);
 }
 
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -611,4 +675,36 @@ footer {
     .nav-links {
         display: none;
     }
+}
+
+/* Override .animal-emoji untuk gambar */
+.animal-emoji {
+    display: block !important;
+    position: relative !important;
+    /* ← INI YANG KURANG! */
+    overflow: hidden;
+}
+
+.animal-emoji img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Pastikan label di atas gambar */
+.animal-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem 1.25rem 1rem;
+    background: linear-gradient(to top, rgba(10, 20, 10, 0.85), transparent);
+    color: var(--white);
+    z-index: 2;
+    /* Di atas gambar */
 }

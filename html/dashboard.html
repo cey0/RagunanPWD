@@ -4,148 +4,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilderness & Discovery</title>
+    <title>Buanantara - Dashboard</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/profil.css">
 </head>
 
 <body>
-    <!-- NAV -->
+
+    <!-- NAVBAR -->
     <nav>
-        <div class="nav-logo">Wilderness &amp; Discovery</div>
+        <div class="nav-logo">
+            <span class="nav-logo-icon"></span>
+            Buanantara
+        </div>
         <ul class="nav-links">
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="dashboard.html" class="active" data-i18n="nav-dashboard">Dashboard</a></li>
             <li><a href="#">Gallery</a></li>
-            <li><a href="#" class="active">Discovery</a></li>
+            <li><a href="discovery.html">Discovery</a></li>
             <li><a href="#">Booking</a></li>
         </ul>
         <div class="nav-right">
-            <button class="btn-sign">Sign in</button>
-            <button class="btn-join">Join Now</button>
+            <button class="btn-sign">Masuk</button>
+            <button class="btn-join">Gabung Sekarang</button>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-left">
-            <div class="hero-badge">Voted #1 Wildlife Park</div>
-            <h1>Step into the <span>Wilderness</span></h1>
-            <p>Embark on an unforgettable journey through thriving natural habitats. Connect with wildlife and support
-                global conservation efforts right here.</p>
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-            <div class="booking-card">
-                <h3>Quick Booking</h3>
-                <div class="booking-fields">
-                    <div class="field-group">
-                        <label>Date</label>
-                        <input type="date" placeholder="mm/dd/yyyy">
+        <!-- PROFILE HERO -->
+        <section class="profile-hero">
+            <div class="profile-info">
+                <div class="profile-avatar-wrapper">
+                    <!-- FOTO PROFIL -->
+                    <img src="anonym.jpg" alt="Anonymous" class="profile-avatar" id="profile-photo">
+
+                    <!-- BADGE GOLD -->
+                    <span class="profile-badge">
+                        <span>⭐</span> Gold
+                    </span>
+                </div>
+                <div class="profile-details">
+                    <h1 id="profile-name">Anonymous</h1>
+                    <p class="member-since">📍 Anggota Sejak 2026</p>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">KUNJUNGAN</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">CERITA TERSIMPAN</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">MENDATANG</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT GRID -->
+        <div class="content-grid">
+
+            <!-- LEFT: YOUR EXPEDITIONS -->
+            <div class="expeditions-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="icon">🧭</span> Ekspedisi Anda
+                    </h2>
+                </div>
+
+                <!-- Card 1: Savannah Sunrise Safari -->
+                <div class="expedition-card dark">
+                    <div class="expedition-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=300&fit=crop');">
+                        <span class="badge">Mendatang</span>
                     </div>
-                    <div class="field-group">
-                        <label>Guests</label>
-                        <select>
-                            <option>2 Adults, 1 Child</option>
-                            <option>1 Adult</option>
-                            <option>2 Adults</option>
-                            <option>Family (4)</option>
-                        </select>
+                    <div class="expedition-content">
+                        <div>
+                            <div class="expedition-date">📅 Okt 24, 2026 · 8:00 AM</div>
+                            <h3>Safari Matahari Terbit di Savannah</h3>
+                            <p>Bergabunglah bersama pemandu ahli kami dalam perjalanan pagi hari melintasi dataran
+                                terbuka untuk mengamati satwa liar yang sedang beraktivitas saat fajar.</p>
+                        </div>
+                        <div class="expedition-actions">
+                            <button class="btn-scan"> Kartu Akses</button>
+                            <button class="btn-details">Rincian</button>
+                        </div>
                     </div>
                 </div>
-                <button class="btn-find">Find Tickets →</button>
+
+                <!-- Card 2: Aquatic Night Tour -->
+                <div class="expedition-card light">
+                    <div class="expedition-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&h=300&fit=crop');">
+                        <span class="badge">Selesai</span>
+                    </div>
+                    <div class="expedition-content">
+                        <div>
+                            <div class="expedition-date" style="color: #888;">📅 Sep 12, 2026</div>
+                            <h3>Tur Malam di Perairan</h3>
+                        </div>
+                        <div class="expedition-actions">
+                            <span class="badge-completed">✓ Selesai</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- RIGHT: WILD FAVORITES -->
+            <div class="favorites-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="icon">🔖</span> Favorit Liar
+                    </h2>
+                </div>
+
+                <!-- Card: The Pride of the North -->
+                <div class="favorite-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=300&fit=crop');">
+                    <span class="card-badge">🦁 Liar</span>
+                    <span class="card-title">Kebanggaan dari Utara</span>
+                </div>
+
+                <!-- Card: Canopy Colors -->
+                <div class="favorite-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&h=300&fit=crop');">
+                    <span class="card-badge">🌿 Habitat</span>
+                    <span class="card-title">Warna Kanopi</span>
+                </div>
+
+                <!-- Card: Conservation Efforts -->
+                <div class="favorite-card text-card">
+                    <span class="card-badge">📝 Catatan Lapangan</span>
+                    <h4>Upaya Konservasi 2024</h4>
+                    <p>Baca tentang bagaimana keanggotaan Anda berkontribusi pada restorasi habitat lokal...</p>
+                </div>
+            </div>
+
         </div>
 
-        <div class="hero-image">
-            <div class="img-placeholder">🐯</div>
-            <div class="habitat-tag">
-                <div class="habitat-dot"></div>
-                HABITAT · Asian Rainforest
+        <!-- ACCOUNT SETTINGS -->
+        <section class="settings-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">⚙️</span> Pengaturan Akun
+                </h2>
             </div>
-        </div>
-    </section>
 
-    <!-- STATS -->
-    <div class="stats">
-        <div class="stat-item">
-            <div class="stat-number">450+</div>
-            <div class="stat-label">Unique Species</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">50</div>
-            <div class="stat-label">Immersive Habitats</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">12</div>
-            <div class="stat-label">Conservation Projects</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">4.9</div>
-            <div class="stat-label">Visitor Rating</div>
-        </div>
+            <div class="settings-list">
+                <div class="settings-item">
+                    <div class="settings-icon">👤</div>
+                    <div class="settings-info">
+                        <h4>Informasi Pribadi</h4>
+                        <p>Perbarui email, nomor telepon, dan alamat.</p>
+                    </div>
+                    <span class="settings-arrow">›</span>
+                </div>
+                <div class="settings-item">
+                    <div class="settings-icon">💳</div>
+                    <div class="settings-info">
+                        <h4>Metode Pembayaran</h4>
+                        <p>Kelola kartu dan riwayat penagihan</p>
+                    </div>
+                    <span class="settings-arrow">›</span>
+                </div>
+            </div>
+        </section>
+
     </div>
-
-    <!-- RESIDENTS -->
-    <section class="residents">
-        <div class="section-header">
-            <div>
-                <h2>Residents of the Wild</h2>
-                <p>Discover the incredible animals that call our park home.</p>
-            </div>
-            <a href="#" class="view-gallery">View Gallery →</a>
-        </div>
-
-        <div class="animals-grid">
-            <!-- Large card -->
-            <div class="animal-card large">
-                <div class="animal-emoji"
-                    style="background: linear-gradient(160deg, #8fa85a 0%, #b5cca0 40%, #4a6e3a 100%);">🐘</div>
-                <div class="animal-label">
-                    <div class="animal-category">Savanna</div>
-                    <div class="animal-name">African Elephant</div>
-                </div>
-            </div>
-
-            <!-- Small card 1 -->
-            <div class="animal-card small">
-                <div class="animal-emoji"
-                    style="background: linear-gradient(135deg, #2a5e2a 0%, #4a8c4a 50%, #1a3a1a 100%);">🦜</div>
-                <div class="animal-label">
-                    <div class="animal-category">Tropical</div>
-                    <div class="animal-name">Scarlet Macaw</div>
-                </div>
-            </div>
-
-            <!-- Small card 2 -->
-            <div class="animal-card small">
-                <div class="animal-emoji"
-                    style="background: linear-gradient(135deg, #5a4a2a 0%, #8a7a5a 50%, #3a2a1a 100%);">🐒</div>
-                <div class="animal-label">
-                    <div class="animal-category">Rainforest</div>
-                    <div class="animal-name">Capuchin Monkey</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <div style="padding: 0 5%; margin-bottom: 60px; max-width: 1160px; margin-left: auto; margin-right: auto;">
-        <div class="newsletter">
-            <div class="newsletter-icon">✉️</div>
-            <h2>Join the Explorer's Club</h2>
-            <p>Get the latest updates on animal arrivals, conservation news, and exclusive early access to park events.
-            </p>
-            <div class="newsletter-form">
-                <input type="email" placeholder="Your email address">
-                <button class="btn-subscribe">Subscribe</button>
-            </div>
-            <div class="newsletter-note">We respect your privacy. We spam, just news.</div>
-        </div>
-    </div>
-
-    <footer>
-        © 2026 Wilderness & Discovery. All rights reserved.
-    </footer>
 
 </body>
 
