@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buanantara - Discovery</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Buanantara</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="discovery.html" class="active">Discovery</a></li>
+            <li><a href="#">Booking</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="btn-sign">Masuk</button>
+            <button class="btn-join">Gabung Sekarang</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Petualangan <span>Eksplorasi</span></h1>
+            <p>Rasakan sensasi bertemu langsung dengan penghuni hutan, sabana, dan hutan hujan tropis. Setiap langkah
+                adalah penemuan baru yang akan mengubah cara Anda memandang alam.</p>
+
+            <div class="booking-card">
+                <h3>Pemesanan Cepat</h3>
+                <div class="booking-fields">
+                    <div class="field-group">
+                        <label>Tanggal</label>
+                        <input type="date" placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="field-group">
+                        <label>Tamu</label>
+                        <select>
+                            <option>Pilih</option>
+                            <option>2 Dewasa, 1 Anak</option>
+                            <option>1 Dewasa</option>
+                            <option>2 Dewasa</option>
+                            <option>Keluarga (4)</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-find">Cari Tiket →</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="rainforest.jpg" alt="Italian Trulli">
+            <div class="habitat-tag">
+                <div class="habitat-dot"></div>
+                HABITAT · Hutan Hujan Asia
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number">450+</div>
+            <div class="stat-label">Spesies Unik</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50</div>
+            <div class="stat-label">Habitat Imersif</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Proyek Konservasi</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Peringkat Pengunjung</div>
+        </div>
+    </div>
+
+    <!-- RESIDENTS -->
+    <section class="residents">
+        <div class="section-header">
+            <div>
+                <h2>Penghuni Alam Liar</h2>
+                <p>Temukan hewan-hewan luar biasa yang menjadikan taman kami sebagai rumah mereka.</p>
+            </div>
+        </div>
+
+        <div class="animals-grid">
+            <!-- Large card -->
+            <div class="animal-card large"
+                style="background-image: url('african elephant.jpg'); background-size: cover; background-position: center;">
+                <div class="animal-label">
+                    <div class="animal-category">Savana</div>
+                    <div class="animal-name">Gajah Afrika</div>
+                </div>
+            </div>
+
+            <!-- Small card 1 -->
+            <div class="animal-card small"
+                style="background-image: url('scarlet macaw.jpg'); background-size: cover; background-position: center;">
+                <div class="animal-label">
+                    <div class="animal-category">Tropis</div>
+                    <div class="animal-name">Burung Macaw Merah</div>
+                </div>
+            </div>
+
+            <!-- Small card 2 -->
+            <div class="animal-card small"
+                style="background-image: url('capuchin monkey.jpg'); background-size: cover; background-position: center;">
+                <div class="animal-label">
+                    <div class="animal-category">Hutan Hujan</div>
+                    <div class="animal-name">Monyet Capuchin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div style="padding: 0 5%; margin-bottom: 60px; max-width: 1160px; margin-left: auto; margin-right: auto;">
+        <div class="newsletter">
+            <div class="newsletter-icon">✉️</div>
+            <h2>Bergabunglah dengan Klub Penjelajah</h2>
+            <p>Dapatkan informasi tentang kedatangan hewan, berita konservasi, dan akses awal eksklusif ke acara-acara
+                taman.
+            </p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Alamat Email Anda">
+                <button class="btn-subscribe">Berlangganan</button>
+            </div>
+            <div class="newsletter-note">Kami menghormati privasi Anda. Kami mengirimkan spam, hanya berita.</div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Buanantara. Semua hak dilindungi undang-undang.
+    </footer>
+
+</body>
+
+</html>
