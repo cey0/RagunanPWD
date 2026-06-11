@@ -1,0 +1,610 @@
+:root {
+    --cream: #f5f0e8;
+    --dark: #1a1a14;
+    --green-deep: #1e3a2f;
+    --green-mid: #2d5a40;
+    --amber: #c8762a;
+    --amber-light: #e8952e;
+    --text-body: #3a3a30;
+    --text-muted: #7a7a6a;
+    --white: #ffffff;
+    --border: #e0d8cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.nav-logo-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--green-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--dark);
+}
+
+.nav-links a.active {
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-sign {
+    font-size: 0.875rem;
+    color: var(--text-body);
+    font-weight: 500;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.btn-join {
+    background: var(--green-deep);
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-join:hover {
+    background: var(--green-mid);
+    transform: translateY(-1px);
+}
+
+/* HERO */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 5% 70px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(245, 240, 232, 0.3), rgba(232, 224, 208, 0.3)),
+        url('../html/background.jpg') center/cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.hero p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+}
+
+.btn-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--amber);
+    color: var(--white);
+    padding: 0.75rem 1.75rem;
+    border-radius: 100px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-start:hover {
+    background: var(--amber-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 118, 42, 0.4);
+}
+
+/* BIOMES SECTION */
+
+.biomes {
+    padding: 70px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.biomes-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.biome-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.biome-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.biome-card.large {
+    grid-row: span 2;
+    min-height: 380px;
+}
+
+.biome-card.small {
+    min-height: 180px;
+}
+
+.biome-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.biome-card.large .biome-placeholder {
+    background: linear-gradient(135deg, #c8a96e 0%, #d4b878 30%, #8fa352 70%, #6a7a30 100%);
+}
+
+.biome-card:nth-child(2) .biome-placeholder {
+    background: linear-gradient(135deg, #5a8a9a 0%, #7ab0c0 40%, #3a6a7a 100%);
+}
+
+.biome-card:nth-child(3) .biome-placeholder {
+    background: linear-gradient(135deg, #1e3a2f 0%, #2d5a40 40%, #3a7a50 100%);
+}
+
+.biome-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(10, 15, 10, 0.92), transparent);
+    color: var(--white);
+}
+
+.biome-badge {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--white);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.biome-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.biome-desc {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    max-width: 320px;
+}
+
+.biome-card.small .biome-name {
+    font-size: 1rem;
+}
+
+.biome-card.small .biome-desc {
+    font-size: 0.72rem;
+}
+
+/* PLAN YOUR VISIT */
+.plan-visit {
+    padding: 60px 5% 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s 0.4s ease both;
+}
+
+.plan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: all 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-icon.green {
+    background: var(--green-deep);
+    color: var(--white);
+}
+
+.info-icon.amber {
+    background: var(--amber);
+    color: var(--white);
+}
+
+.info-icon.brown {
+    background: #5a4a30;
+    color: var(--white);
+}
+
+.info-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.info-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.map-card {
+    background: #e8e4dc;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 400px;
+}
+
+.map-circle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.map-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.map-circle-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #5a8a5a 0%, #7ab87a 30%, #4a6a4a 70%, #3a5a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+}
+
+.map-actions {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    color: var(--text-body);
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-map:hover {
+    background: var(--cream);
+}
+
+.btn-view-map {
+    background: var(--green-deep);
+    color: var(--white);
+}
+
+.btn-view-map:hover {
+    background: var(--green-mid);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        height: 400px;
+        padding-bottom: 50px;
+    }
+
+    .biomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .biome-card.large {
+        grid-row: span 1;
+        min-height: 260px;
+    }
+
+    .biome-card.small {
+        min-height: 160px;
+    }
+
+    .plan-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .map-card {
+        min-height: 320px;
+    }
+
+    .map-circle {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+.biomes-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 240px 240px; /* ← KUNCI: tinggi tetap per baris */
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.biome-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Card besar: ambil 2 baris = 480px + gap */
+.biome-card.large {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 100%;
+}
+
+/* Card kecil: masing-masing 1 baris = 240px */
+.biome-card.small {
+    grid-column: 2;
+    height: 100%;
+}
+
+.biome-card.small:first-of-type {
+    grid-row: 1;
+}
+
+.biome-card.small:last-of-type {
+    grid-row: 2;
+}
+
+/* GAMBAR MENYESUAIKAN CARD */
+.biome-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← Gambar crop otomatis, tidak gepeng */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.map-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--white);
+    background: var(--green-mid);
+}
+
+.map-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    /* KUNCI KETAJAMAN GAMBAR */
+    image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
+    image-rendering: crisp-edges; /* Firefox */
+    image-rendering: high-quality; /* Standard */
+    
+    /* Mencegah blur */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.map-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--white);
+}
+
+.map-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← Penuh, tapi terpotong */
+    object-position: center center; /* Atur fokus gambar */
+}
