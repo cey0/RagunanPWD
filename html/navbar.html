@@ -5,30 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/dashboard.css">
-    <style>
-        body {
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        nav {
-            /* Pastikan menempati seluruh tinggi body iframe */
-            height: 64px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/navbar.css">
 </head>
 <body>
     <nav>
         <div class="nav-logo">
             <span class="nav-logo-icon"></span>
-            Buanantara
+            Ragunan
         </div>
         <ul class="nav-links">
             <li><a href="dashboard.html" target="_parent" id="link-dashboard">Dashboard</a></li>
-            <li><a href="#" target="_parent">Gallery</a></li>
-            <li><a href="discovery.html" target="_parent" id="link-discovery">Discovery</a></li>
-            <li><a href="#" target="_parent">Booking</a></li>
+            <li><a href="gallery.html" target="_parent" id="link-gallery">Gallery</a></li>
+            <li><a href="tiketbooking.html" target="_parent" id="link-booking">Booking</a></li>
         </ul>
         <div class="nav-right">
             <button class="btn-sign">Masuk</button>
@@ -36,51 +24,6 @@
         </div>
     </nav>
     <script src="../js/db.js"></script>
-    <script>
-        // Tentukan kelas active secara dinamis berdasarkan URL halaman induk
-        try {
-            const parentUrl = window.parent.location.pathname;
-            if (parentUrl.includes("dashboard.html")) {
-                document.getElementById("link-dashboard").classList.add("active");
-            } else if (parentUrl.includes("discovery.html")) {
-                document.getElementById("link-discovery").classList.add("active");
-            }
-        } catch (e) {
-            console.error("Gagal mendeteksi URL induk:", e);
-        }
-
-        // Tampilkan tombol dinamis berdasarkan status login
-        document.addEventListener('DOMContentLoaded', () => {
-            const DB = window.BuanantaraDB;
-            const navRight = document.querySelector('.nav-right');
-            
-            if (DB) {
-                const user = DB.getCurrentUser();
-                if (user) {
-                    // Jika user sudah masuk, ubah tombol menjadi link ke Profil & Logout
-                    navRight.innerHTML = `
-                        <a href="profil.html" target="_parent" class="btn-sign" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <img src="${user.avatar || '../assets/anonym.jpg'}" style="width: 24px; height: 24px; border-radius: 50%; object-cover: fit;">
-                            <span>${user.fullName.split(' ')[0]}</span>
-                        </a>
-                        <button class="btn-join" id="btn-logout" style="background: #a94442;">Keluar</button>
-                    `;
-
-                    document.getElementById('btn-logout').addEventListener('click', () => {
-                        DB.logoutUser();
-                        window.parent.location.href = 'login.html';
-                    });
-                } else {
-                    // Jika belum masuk, arahkan tombol Masuk & Gabung ke login / register
-                    navRight.querySelector('.btn-sign').addEventListener('click', () => {
-                        window.parent.location.href = 'login.html';
-                    });
-                    navRight.querySelector('.btn-join').addEventListener('click', () => {
-                        window.parent.location.href = 'register.html';
-                    });
-                }
-            }
-        });
-    </script>
+    <script src="../js/navbar.js"></script>
 </body>
 </html>

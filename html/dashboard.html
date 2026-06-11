@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buanantara - Dashboard</title>
+    <title>Ragunan - Dashboard</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -29,26 +29,29 @@
                 Embark on an unforgettable journey through thriving natural habitats. Connect with wildlife and support global conservation efforts right here.
             </p>
 
-            <div class="booking-card" style="background: #ffffff; border: 1px solid #dfdec9; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
-                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #112d21; display: flex; align-items: center; gap: 8px;">
-                    🎫 Quick Booking
+            <div class="booking-card" style="padding: 24px 28px;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; color: #112d21; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #e2ebd9; padding-bottom: 8px;">
+                    🌿 Status &amp; Informasi Taman
                 </h3>
-                <div class="booking-fields" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
-                    <div class="field-group">
-                        <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5e6b60; margin-bottom: 6px;">Date</label>
-                        <input type="date" style="width: 100%; padding: 10px; border: 1px solid #dfdec9; border-radius: 6px; font-family: inherit; font-size: 0.875rem;" placeholder="mm/dd/yyyy">
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; border-bottom: 1px solid #e2ebd9; padding-bottom: 8px;">
+                        <span style="color: #5e6b60; font-weight: 500;">📅 Hari Buka</span>
+                        <span style="font-weight: 700; color: #112d21;">Selasa - Minggu</span>
                     </div>
-                    <div class="field-group">
-                        <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5e6b60; margin-bottom: 6px;">Guests</label>
-                        <select style="width: 100%; padding: 10px; border: 1px solid #dfdec9; border-radius: 6px; font-family: inherit; font-size: 0.875rem; background: #ffffff;">
-                            <option>2 Adults, 1 Child</option>
-                            <option>1 Adult</option>
-                            <option>2 Adults</option>
-                            <option>Family (4)</option>
-                        </select>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; border-bottom: 1px solid #e2ebd9; padding-bottom: 8px;">
+                        <span style="color: #5e6b60; font-weight: 500;">❌ Hari Libur</span>
+                        <span style="font-weight: 700; color: #b05c24;">Senin (Libur Satwa)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; border-bottom: 1px solid #e2ebd9; padding-bottom: 8px;">
+                        <span style="color: #5e6b60; font-weight: 500;">⏰ Jam Operasional</span>
+                        <span style="font-weight: 700; color: #112d21;">07:30 - 16:00 WIB</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span style="color: #5e6b60; font-weight: 500;">🐅 Koleksi Satwa</span>
+                        <span style="font-weight: 700; color: #112d21;" id="live-fauna-count">5 Spesies Dilindungi</span>
                     </div>
                 </div>
-                <button class="btn-find" style="width: 100%; padding: 12px; background: #d8813a; color: #ffffff; border: none; border-radius: 100px; font-weight: 700; font-size: 0.875rem; cursor: pointer; transition: background 0.2s;">Find Tickets →</button>
+                <button class="btn-find" onclick="window.location.href='tiketbooking.html'" style="margin-top: 5px;">Pesan Tiket Kunjungan →</button>
             </div>
         </div>
 
@@ -62,26 +65,76 @@
     </section>
 
     <!-- STATS -->
-    <div class="stats" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 40px 0; border-top: 1px solid #dfdec9; text-align: center;">
-        <div class="stat-item">
-            <div class="stat-number" style="font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: #b05c24;">450+</div>
-            <div class="stat-label" style="font-size: 0.8rem; color: #5e6b60; font-weight: 600;">Unique Species</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" style="font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: #b05c24;">50</div>
-            <div class="stat-label" style="font-size: 0.8rem; color: #5e6b60; font-weight: 600;">Immersive Habitats</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" style="font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: #b05c24;">12</div>
-            <div class="stat-label" style="font-size: 0.8rem; color: #5e6b60; font-weight: 600;">Conservation Projects</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" style="font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: #b05c24;">4.9</div>
-            <div class="stat-label" style="font-size: 0.8rem; color: #5e6b60; font-weight: 600;">Visitor Rating</div>
+    <div style="max-width: 1160px; margin: 0 auto; padding: 48px 5% 56px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+
+            <div style="background: white; border-radius: 20px; padding: 28px 24px; border: 1px solid #e8e2d8; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-bottom: 4px solid #1e3a2f; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font-size: 1.6rem;">🐾</span>
+                <div style="font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #1e3a2f; line-height: 1;">450+</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #7a7a6a; text-transform: uppercase; letter-spacing: 0.07em;">Unique Species</div>
+                <div style="font-size: 0.78rem; color: #aaa; margin-top: 2px;">Fauna terdaftar & dilindungi</div>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 28px 24px; border: 1px solid #e8e2d8; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-bottom: 4px solid #c8762a; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font-size: 1.6rem;">🌿</span>
+                <div style="font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #c8762a; line-height: 1;">50</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #7a7a6a; text-transform: uppercase; letter-spacing: 0.07em;">Immersive Habitats</div>
+                <div style="font-size: 0.78rem; color: #aaa; margin-top: 2px;">Zona habitat alami tematik</div>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 28px 24px; border: 1px solid #e8e2d8; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-bottom: 4px solid #1e3a2f; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font-size: 1.6rem;">🔬</span>
+                <div style="font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #1e3a2f; line-height: 1;">12</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #7a7a6a; text-transform: uppercase; letter-spacing: 0.07em;">Conservation Projects</div>
+                <div style="font-size: 0.78rem; color: #aaa; margin-top: 2px;">Program aktif pelestarian spesies</div>
+            </div>
+
+            <div style="background: white; border-radius: 20px; padding: 28px 24px; border: 1px solid #e8e2d8; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-bottom: 4px solid #c8762a; display: flex; flex-direction: column; gap: 8px;">
+                <span style="font-size: 1.6rem;">⭐</span>
+                <div style="font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #c8762a; line-height: 1;">4.9</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #7a7a6a; text-transform: uppercase; letter-spacing: 0.07em;">Visitor Rating</div>
+                <div style="font-size: 0.78rem; color: #aaa; margin-top: 2px;">Rata-rata ulasan pengunjung</div>
+            </div>
+
         </div>
     </div>
 
+
+    <!-- TIKET SAYA — hanya tampil jika user login -->
+    <section id="my-tickets-section" style="display:none; padding: 0 5%; max-width: 1160px; margin: 0 auto 48px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #112d21;">🎟️ Tiket Saya</h2>
+                <p style="font-size: 0.9rem; color: #5e6b60; margin-top: 4px;">Ringkasan pemesanan tiket kunjungan Anda.</p>
+            </div>
+            <button onclick="window.location.href='profil.html'" style="background: none; border: 1.5px solid #1e3a2f; color: #1e3a2f; border-radius: 100px; padding: 9px 20px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#1e3a2f';this.style.color='white'" onmouseout="this.style.background='none';this.style.color='#1e3a2f'">Lihat Semua Tiket →</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+            <!-- Tiket Aktif -->
+            <div style="background: linear-gradient(135deg, #1e3a2f 0%, #2d5a40 100%); border-radius: 20px; padding: 28px 32px; color: white; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+                <div style="font-size: 2.5rem; margin-bottom: 6px;">🎫</div>
+                <div id="stat-active-tickets" style="font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 8px;">-</div>
+                <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8;">Tiket Aktif</div>
+                <div style="font-size: 0.78rem; opacity: 0.6; margin-top: 6px;">Kunjungan yang akan datang</div>
+            </div>
+
+            <!-- Total Pemesanan -->
+            <div style="background: white; border: 1px solid #e0d8cc; border-radius: 20px; padding: 28px 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(200,118,42,0.05); border-radius: 50%;"></div>
+                <div style="font-size: 2.5rem; margin-bottom: 6px;">📋</div>
+                <div id="stat-total-tickets" style="font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 8px; color: #c8762a;">-</div>
+                <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #7a7a6a;">Total Pemesanan</div>
+                <div style="font-size: 0.78rem; color: #aaa; margin-top: 6px;">Sepanjang waktu</div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- RESIDENTS -->
+
     <section class="residents">
         <div class="section-header">
             <div>
@@ -117,7 +170,7 @@
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
+    <!-- NEWSLETTER
     <div style="padding: 0 5%; margin-bottom: 60px; max-width: 1160px; margin-left: auto; margin-right: auto;">
         <div class="newsletter">
             <div class="newsletter-icon">✉️</div>
@@ -131,70 +184,14 @@
             </div>
             <div class="newsletter-note">Kami menghormati privasi Anda. Kami mengirimkan spam, hanya berita.</div>
         </div>
-    </div>
+    </div> -->
 
     <footer>
-        © 2026 Buanantara. Semua hak dilindungi undang-undang.
+        © 2026 Ragunan. Semua hak dilindungi undang-undang.
     </footer>
 
     <!-- Database Integration -->
     <script src="../js/db.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const DB = window.BuanantaraDB;
-            if (DB) {
-                // Read current session info
-                const currentUser = DB.getCurrentUser();
-                
-                // Fetch dynamic database data safely using db.js client
-                try {
-                    const dbData = await DB.getDatabaseData();
-                    const fauna = dbData.fauna;
-
-                    if (fauna && fauna.length > 0) {
-                        // 1. Update Hero Image to Harimau Sumatera from db.json
-                        const tigerFauna = fauna.find(f => f.id === 'f_01');
-                        if (tigerFauna) {
-                            const heroImg = document.querySelector('.hero-image img');
-                            if (heroImg) {
-                                heroImg.src = tigerFauna.image;
-                            }
-                        }
-
-                        // 2. Update Resident Animal Cards dynamically using db.json
-                        const animalGrid = document.querySelector('.animals-grid');
-                        if (animalGrid && fauna.length >= 3) {
-                            animalGrid.innerHTML = `
-                                <!-- Large card -->
-                                <div class="animal-card large" style="background-image: url('${fauna[0].image}'); background-size: cover; background-position: center;">
-                                    <div class="animal-label">
-                                        <div class="animal-category">${fauna[0].category}</div>
-                                        <div class="animal-name">${fauna[0].name}</div>
-                                    </div>
-                                </div>
-                                <!-- Small card 1 -->
-                                <div class="animal-card small" style="background-image: url('${fauna[1].image}'); background-size: cover; background-position: center;">
-                                    <div class="animal-label">
-                                        <div class="animal-category">${fauna[1].category}</div>
-                                        <div class="animal-name">${fauna[1].name}</div>
-                                    </div>
-                                </div>
-                                <!-- Small card 2 -->
-                                <div class="animal-card small" style="background-image: url('${fauna[2].image}'); background-size: cover; background-position: center;">
-                                    <div class="animal-label">
-                                        <div class="animal-category">${fauna[2].category}</div>
-                                        <div class="animal-name">${fauna[2].name}</div>
-                                    </div>
-                                </div>
-                            `;
-                        }
-                    }
-                } catch (err) {
-                    console.error("Gagal memuat data fauna dinamis dari db.json:", err);
-                }
-            }
-        });
-    </script>
+    <script src="../js/dashboard.js"></script>
 </body>
-
 </html>

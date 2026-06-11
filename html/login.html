@@ -104,68 +104,7 @@
 
     <!-- Database -->
     <script src="../js/db.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const DB = window.BuanantaraDB;
-            const form = document.getElementById('loginForm');
-            const alertMsg = document.getElementById('alertMsg');
-
-            if (!DB) {
-                console.error("Database script (db.js) failed to load.");
-                return;
-            }
-
-            function showAlert(message, isError = true) {
-                alertMsg.className = 'p-3 rounded-lg text-sm font-body-md mb-3 transition-all';
-                if (isError) {
-                    alertMsg.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-300');
-                } else {
-                    alertMsg.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-300');
-                }
-                alertMsg.textContent = message;
-                alertMsg.classList.remove('hidden');
-            }
-
-            function hideAlert() {
-                alertMsg.classList.add('hidden');
-            }
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                hideAlert();
-
-                const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value;
-
-                // Validasi
-                if (!email || !password) {
-                    showAlert('Email dan password harus diisi!');
-                    return;
-                }
-
-                // Submit
-                const submitBtn = form.querySelector('button[type="submit"]');
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Signing in...';
-
-                try {
-                    await DB.loginUser({ email, password });
-                    showAlert('Login berhasil! Mengalihkan...', false);
-                    setTimeout(() => {
-                        window.location.href = 'dashboard.html';
-                    }, 1000);
-                } catch (err) {
-                    showAlert(err.message);
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Sign In';
-                }
-            });
-
-            // Jika sudah login, redirect ke dashboard
-            const user = DB.getCurrentUser();
-            if (user) window.location.href = 'dashboard.html';
-        });
-    </script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

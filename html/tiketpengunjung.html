@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ragunan - Detail Pengunjung</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tiketbooking.css">
+<link rel="stylesheet" href="../css/tiketpengunjung.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<iframe src="navbar.html" style="width: 100%; height: 64px; border: none; display: block; position: sticky; top: 0; z-index: 100; overflow: hidden;" scrolling="no"></iframe>
+
+<!-- Progress Steps -->
+<div class="progress-container">
+    <div class="progress-line"></div>
+    <div class="step completed">
+        <div class="step-circle">1</div>
+        <div class="step-label">Jadwal</div>
+    </div>
+    <div class="step active">
+        <div class="step-circle">2</div>
+        <div class="step-label">Pengunjung</div>
+    </div>
+    <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Pembayaran</div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-container">
+    <div class="left-content">
+        <!-- Visitor Details Form -->
+        <div class="card">
+            <div class="card-title" style="margin-bottom: 12px;">1. Detail Pengunjung Utama</div>
+            <div class="card-subtitle">E-tiket akan dikirimkan ke kontak penanggung jawab di bawah ini.</div>
+            
+            <div class="form-group">
+                <label for="visitor-name">Nama Lengkap</label>
+                <input type="text" id="visitor-name" class="form-control" placeholder="Masukkan nama sesuai KTP/Paspor">
+            </div>
+            
+            <div class="form-group">
+                <label for="visitor-phone">Nomor Whatsapp</label>
+                <input type="tel" id="visitor-phone" class="form-control" placeholder="Contoh: 08123456789">
+            </div>
+
+            <div class="form-group">
+                <label for="visitor-email">Alamat Email</label>
+                <input type="email" id="visitor-email" class="form-control" placeholder="nama@email.com">
+            </div>
+        </div>
+
+        <!-- Ticket Selection -->
+        <div class="card">
+            <div class="card-title" style="margin-bottom: 12px;">2. Jumlah Tiket Masuk</div>
+            <div class="card-subtitle">Pilih jumlah pengunjung. Tiket masuk sudah mencakup akses ke area umum Ragunan Zoo.</div>
+
+            <!-- Dewasa -->
+            <div class="counter-container">
+                <div class="counter-left">
+                    <span class="counter-title">Pengunjung Dewasa</span>
+                    <span class="counter-price" id="price-dewasa-label">Rp 4.000 / orang</span>
+                    <span class="counter-desc">Usia 12 tahun ke atas</span>
+                </div>
+                <div class="counter-controls">
+                    <button class="counter-btn-qty" onclick="changeQty('dewasa', -1)">-</button>
+                    <span class="counter-val" id="qty-dewasa">1</span>
+                    <button class="counter-btn-qty" onclick="changeQty('dewasa', 1)">+</button>
+                </div>
+            </div>
+
+            <!-- Anak-anak -->
+            <div class="counter-container">
+                <div class="counter-left">
+                    <span class="counter-title">Pengunjung Anak</span>
+                    <span class="counter-price" id="price-anak-label">Rp 3.000 / orang</span>
+                    <span class="counter-desc">Usia 3 - 12 tahun (di bawah 3 tahun gratis)</span>
+                </div>
+                <div class="counter-controls">
+                    <button class="counter-btn-qty" onclick="changeQty('anak', -1)">-</button>
+                    <span class="counter-val" id="qty-anak">0</span>
+                    <button class="counter-btn-qty" onclick="changeQty('anak', 1)">+</button>
+                </div>
+            </div>
+
+            <!-- Add-on Attraction: Pusat Primata Schmutzer -->
+            <div class="addon-card" id="addon-schmutzer" onclick="toggleAddon()">
+                <div class="addon-checkbox" id="addon-check"></div>
+                <div class="addon-info">
+                    <span class="addon-badge">Eksklusif</span>
+                    <span class="addon-title">Tambahkan Akses Pusat Primata Schmutzer</span>
+                    <span class="addon-price" id="price-schmutzer-label">Rp 6.000 / orang</span>
+                    <span class="addon-desc">Kompleks konservasi primata konsep open zoo kelas dunia. Sangat direkomendasikan untuk pengalaman edukasi terbaik.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Order Summary -->
+    <aside class="order-summary">
+        <div class="summary-title">Ringkasan Pesanan</div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">📅</span>
+                <div>
+                    <div class="summary-item-label">Tanggal Kunjungan</div>
+                    <div class="summary-item-value" id="summary-date-val">-</div>
+                </div>
+            </div>
+            <a class="edit-link" href="tiketbooking.html">Edit</a>
+        </div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">🕐</span>
+                <div>
+                    <div class="summary-item-label">Waktu Kedatangan</div>
+                    <div class="summary-item-value" id="summary-time-val">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+            <div class="summary-item-left">
+                <span class="summary-icon">👥</span>
+                <div>
+                    <div class="summary-item-label">Rincian Pengunjung</div>
+                    <div class="summary-item-value" id="summary-visitors-val">1 Dewasa</div>
+                    <div id="summary-tickets-detail">
+                        <!-- Dynamic details of tickets and addons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="summary-total">
+            <div class="summary-total-label">Subtotal</div>
+            <div class="summary-total-value" id="summary-total-val">Rp 4.000</div>
+        </div>
+        <div class="tax-note">Pajak dihitung saat pembayaran.</div>
+
+        <button class="continue-btn" onclick="continueToPayment()">Lanjutkan ke Pembayaran →</button>
+
+        <div class="secure-note">
+            🔒 Proses Pemesanan Aman
+        </div>
+    </aside>
+</div>
+
+<script src="../js/db.js"></script>
+<script src="../js/tiketpengunjung.js"></script>
+</body>
+</html>

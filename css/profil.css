@@ -725,3 +725,265 @@ footer {
     align-items: center;
     gap: 4px;
 }
+
+/* ============ E-TICKET MODAL ============ */
+.ticket-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 15, 0.70);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    padding: 20px;
+}
+.ticket-modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.ticket-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ticket-modal-overlay.open .ticket-modal-wrapper {
+    transform: translateY(0) scale(1);
+}
+
+/* Card tiket utama */
+.eticket-card {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+}
+
+/* Header hijau gelap */
+.eticket-header {
+    background: #1e3a2f;
+    padding: 20px 24px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.eticket-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+.eticket-brand-dot {
+    width: 10px; height: 10px;
+    background: #c8762a;
+    border-radius: 50%;
+}
+.eticket-status-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.15);
+    color: #a8e6c1;
+    border: 1px solid rgba(168,230,193,0.4);
+}
+.eticket-status-badge.selesai {
+    color: #ffd180;
+    border-color: rgba(255,209,128,0.4);
+    background: rgba(255,255,255,0.1);
+}
+
+/* Judul & subtitle */
+.eticket-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #1a1a14;
+    padding: 20px 24px 2px;
+    letter-spacing: -0.02em;
+}
+.eticket-subtitle {
+    font-size: 0.8rem;
+    color: #7a7a6a;
+    padding: 0 24px 18px;
+    font-weight: 500;
+}
+
+/* Info grid 2 kolom */
+.eticket-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0 24px 20px;
+}
+.eticket-info-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e8e2d8;
+}
+.eticket-info-item:nth-child(odd) {
+    padding-right: 16px;
+    border-right: 1px dashed #e8e2d8;
+}
+.eticket-info-item:nth-child(even) {
+    padding-left: 16px;
+}
+.eticket-info-item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+.eticket-info-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #7a7a6a;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 4px;
+}
+.eticket-info-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a14;
+    line-height: 1.3;
+}
+
+/* Perforated edge */
+.eticket-perforated {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    position: relative;
+}
+.perf-hole {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--cream, #f5f0e8);
+    flex-shrink: 0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+.perf-left  { margin-left: -14px; }
+.perf-right { margin-right: -14px; }
+.perf-line {
+    flex: 1;
+    height: 2px;
+    border-top: 2px dashed #e0d8cc;
+    margin: 0 2px;
+}
+
+/* Footer: QR + total */
+.eticket-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px 24px;
+    background: #fafaf7;
+}
+.eticket-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.qr-inner {
+    width: 96px;
+    height: 96px;
+    background: white;
+    border-radius: 12px;
+    border: 1.5px solid #e0d8cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.qr-label {
+    font-size: 0.68rem;
+    color: #7a7a6a;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.eticket-right {
+    flex: 1;
+}
+.eticket-total-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #7a7a6a;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 4px;
+}
+.eticket-total-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #1e3a2f;
+    margin-bottom: 12px;
+}
+.eticket-code {
+    font-size: 0.72rem;
+    font-family: monospace;
+    color: #7a7a6a;
+    background: #f0ede8;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+.eticket-note {
+    font-size: 0.72rem;
+    color: #aaa;
+    line-height: 1.5;
+}
+
+/* Tombol tutup — di dalam header sebagai flex item */
+.ticket-close-btn {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.ticket-close-btn:hover { background: rgba(255,255,255,0.28); }
+
+.ticket-modal-wrapper { position: relative; }
+
+/* Tombol unduh */
+.ticket-download-btn {
+    background: white;
+    color: #1e3a2f;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 100px;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+}
+.ticket-download-btn:hover {
+    background: #f5f0e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

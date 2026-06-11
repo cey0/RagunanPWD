@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ragunan - Pembayaran</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tiketbooking.css">
+<link rel="stylesheet" href="../css/tiketpembayaran.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<iframe src="navbar.html" style="width: 100%; height: 64px; border: none; display: block; position: sticky; top: 0; z-index: 100; overflow: hidden;" scrolling="no"></iframe>
+
+<!-- Progress Steps -->
+<div class="progress-container">
+    <div class="progress-line"></div>
+    <div class="step completed">
+        <div class="step-circle">1</div>
+        <div class="step-label">Jadwal</div>
+    </div>
+    <div class="step completed">
+        <div class="step-circle">2</div>
+        <div class="step-label">Pengunjung</div>
+    </div>
+    <div class="step active">
+        <div class="step-circle">3</div>
+        <div class="step-label">Pembayaran</div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-container">
+    <div class="left-content">
+        <!-- Virtual Account Payment -->
+        <div class="card">
+            <div class="card-title" style="margin-bottom: 12px;">Pembayaran Virtual Account</div>
+            <div class="card-subtitle">Silakan selesaikan transfer ke kode Virtual Account Universal di bawah ini. Pemesanan Anda akan terverifikasi secara otomatis.</div>
+
+            <div class="va-display-card">
+                <div class="timer-container">
+                    <span>⏳ Batas Waktu Pembayaran:</span>
+                    <span id="countdown-timer">15:00</span>
+                </div>
+                
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px;">Ragunan Virtual Account (BVA)</div>
+                
+                <div class="va-num-container">
+                    <span class="va-number" id="va-code-val">880608123456789</span>
+                    <button class="btn-copy" onclick="copyVACode()">Salin</button>
+                </div>
+
+                <div style="font-size: 0.85rem; color: var(--text-body); font-weight: 600;">
+                    Atas Nama: <span style="color: var(--green-deep);">Ragunan Wildlife</span>
+                </div>
+            </div>
+
+            <!-- Accordion Instructions -->
+            <div class="instruction-section">
+                <div class="instruction-title">Petunjuk Pembayaran</div>
+                
+                <div class="accordion-item active" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Lewat Mobile Banking (Semua Bank)</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        1. Buka aplikasi m-banking Anda.<br>
+                        2. Pilih menu <b>Transfer</b> lalu klik <b>Virtual Account</b> atau <b>Transfer Bank Lain</b>.<br>
+                        3. Masukkan kode pembayaran di atas.<br>
+                        4. Konfirmasi nama penerima <b>Ragunan Wildlife</b> dan masukkan nominal pembayaran yang sesuai.<br>
+                        5. Masukkan PIN transaksi m-banking Anda untuk menyelesaikan transfer.
+                    </div>
+                </div>
+
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Lewat Mesin ATM</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        1. Masukkan kartu ATM dan PIN Anda.<br>
+                        2. Pilih menu <b>Transaksi Lainnya</b> > <b>Transfer</b> > <b>Virtual Account</b>.<br>
+                        3. Masukkan kode Virtual Account di atas.<br>
+                        4. Pastikan jumlah pembayaran sesuai dengan subtotal pesanan Anda.<br>
+                        5. Pilih <b>Benar</b> untuk memproses transaksi, dan simpan struk pembayaran Anda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Summary -->
+    <aside class="order-summary">
+        <div class="summary-title">Ringkasan Pesanan</div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">📅</span>
+                <div>
+                    <div class="summary-item-label">Tanggal Kunjungan</div>
+                    <div class="summary-item-value" id="summary-date-val">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">🕐</span>
+                <div>
+                    <div class="summary-item-label">Waktu Kedatangan</div>
+                    <div class="summary-item-value" id="summary-time-val">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+            <div class="summary-item-left">
+                <span class="summary-icon">👥</span>
+                <div>
+                    <div class="summary-item-label">Rincian Pengunjung</div>
+                    <div class="summary-item-value" id="summary-visitors-val">-</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="summary-total">
+            <div class="summary-total-label">Total Pembayaran</div>
+            <div class="summary-total-value" id="summary-total-val">Rp -</div>
+        </div>
+        <div class="tax-note">Pajak & Biaya layanan sudah termasuk.</div>
+
+        <button class="continue-btn" onclick="submitPayment()">Selesaikan Pembayaran →</button>
+
+        <div class="secure-note">
+            🔒 Pembayaran Dienkripsi & Aman
+        </div>
+    </aside>
+</div>
+
+<!-- Success Modal Overlay -->
+<div class="modal-overlay" id="success-modal">
+    <div class="modal-card">
+        <div class="modal-success-icon">✓</div>
+        <h3 class="modal-title">Pembayaran Berhasil!</h3>
+        <p class="modal-desc" id="modal-success-message">Tiket Anda telah berhasil diterbitkan. E-tiket dapat diunduh di dashboard profil Anda.</p>
+        <button class="modal-btn" onclick="goToProfile()">Kembali ke Profil</button>
+    </div>
+</div>
+
+<script src="../js/db.js"></script>
+<script src="../js/tiketpembayaran.js"></script>
+</body>
+</html>

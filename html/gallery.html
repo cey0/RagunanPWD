@@ -12,19 +12,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-logo">Wilderness &amp; Discovery</div>
-        <ul class="nav-links">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="gallery.html" class="active">Gallery</a></li>
-            <li><a href="discovery.html">Discovery</a></li>
-            <li><a href="#">Booking</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="btn-signin">Sign In</button>
-            <button class="btn-join">Join Now</button>
-        </div>
-    </nav>
+    <iframe src="navbar.html" style="width: 100%; height: 64px; border: none; display: block; position: sticky; top: 0; z-index: 100; overflow: hidden;" scrolling="no"></iframe>
 
     <!-- MAIN CONTENT -->
     <main class="container">
@@ -32,100 +20,31 @@
         <!-- HERO TEXT -->
         <section class="hero-text">
             <h1>Unseen Chronicles</h1>
-            <p>Step beyond the visible trails and immerse yourself in the profound, quiet<br />
-                stories of the wild. Each frame captures a fleeting moment of natural brilliance.</p>
+            <p>Melangkah melampaui jalan setapak yang biasa dan rasakan keheningan serta<br />
+                keindahan kisah alam liar. Setiap potret menangkap momen keajaiban alam yang nyata.</p>
         </section>
 
         <!-- FILTER TABS -->
         <div class="filter-tabs">
-            <button class="tab active">All Environments</button>
-            <button class="tab">Savannah</button>
-            <button class="tab">Arctic</button>
-            <button class="tab">Forest</button>
-            <button class="tab">Mammals</button>
-            <button class="tab">Birds</button>
-            <button class="tab">Reptiles</button>
+            <button class="tab active">Semua Lingkungan</button>
+            <button class="tab">Mamalia</button>
+            <button class="tab">Reptil</button>
+            <button class="tab">Aves</button>
         </div>
 
         <!-- GALLERY GRID -->
         <div class="gallery-grid">
-
-            <!-- Featured large card -->
-            <div class="card card-featured">
-                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800&h=600&fit=crop" alt="Lion" />
-                <div class="card-overlay">
-                    <div class="card-meta">
-                        <span class="badge-featured">FEATURED STORY</span>
-                        <span class="read-time">⏱ 8 min read</span>
-                    </div>
-                    <h2>The King's Silent Watch</h2>
-                    <p>In the fading light of the Okavango, patience is the ultimate predator. Witness the strategy behind the stillness.</p>
-                </div>
-            </div>
-
-            <!-- Right top card -->
-            <div class="card card-right-top">
-                <img src="https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?w=400&h=400&fit=crop" alt="Frog" />
-                <div class="card-overlay">
-                    <div class="card-meta">
-                        <span class="read-time">⏱ 4 min read</span>
-                    </div>
-                    <h2>Canopy Echoes</h2>
-                    <p>The delicate balance of amphibian life high above the forest floor.</p>
-                </div>
-            </div>
-
-            <!-- Bottom left card -->
-            <div class="card card-bottom-left">
-                <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=400&h=300&fit=crop" alt="Snow leopard" />
-                <div class="card-overlay">
-                    <div class="card-meta">
-                        <span class="read-time">⏱ 6 min read</span>
-                    </div>
-                    <h2>Ghosts of the Frost</h2>
-                    <p>Tracking the elusive hunters of the high alpine tundra.</p>
-                </div>
-            </div>
-
-            <!-- Bottom middle card -->
-            <div class="card card-bottom-mid">
-                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&h=300&fit=crop" alt="Macaw" />
-                <div class="card-overlay">
-                    <div class="card-meta">
-                        <span class="read-time">⏱ 5 min read</span>
-                    </div>
-                    <h2>Wings of the Canopy</h2>
-                    <p>A vivid display of survival and socialization in the treetops.</p>
-                </div>
-            </div>
-
-            <!-- Quote card -->
-            <div class="card card-quote">
-                <div class="quote-icon">"</div>
-                <blockquote>
-                    "Every species we observe offers a silent lesson in resilience. Our job is simply to listen."
-                </blockquote>
-                <div class="quote-author">
-                    <div class="author-avatar">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=48&h=48&fit=crop&crop=faces" alt="Dr. Elena Rostova" />
-                    </div>
-                    <div>
-                        <div class="author-name">Dr. Elena Rostova</div>
-                        <div class="author-title">Lead Conservationist</div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Dynamically populated from db.json -->
         </div>
 
         <!-- PRESERVING THE CANVAS -->
         <section class="conservation-banner">
             <div class="conservation-text">
-                <h2>Preserving the<br />Canvas</h2>
-                <p>The stories documented in Unseen Chronicles are vulnerable. Discover how our active field initiatives are working to ensure these habitats remain untouched for generations to come.</p>
+                <h2>Melestarikan Kanvas Alam</h2>
+                <p>Kisah-kisah yang terdokumentasi di Unseen Chronicles sangat rentan punah. Pelajari bagaimana inisiatif konservasi aktif kami menjaga habitat ini tetap asri untuk generasi mendatang.</p>
                 <div class="conservation-actions">
-                    <button class="btn-primary">View Conservation Efforts</button>
-                    <button class="btn-outline">Donate Now</button>
+                    <button class="btn-primary" onclick="window.location.href='tiketbooking.html'">Pesan Tiket Kunjungan</button>
+                    <button class="btn-outline">Donasi Sekarang</button>
                 </div>
             </div>
             <div class="conservation-image">
@@ -140,26 +59,245 @@
         <div class="footer-inner">
 
             <div class="footer-brand">
-                <div class="footer-logo">Wilderness &amp;<br />Discovery</div>
-                <p>© 2024 Wilderness &amp; Discovery Zoo.<br />Preserving nature through education and exploration.</p>
+                <div class="footer-logo">Ragunan</div>
+                <p>© 2026 Kebun Binatang Ragunan Ragunan.<br />Melestarikan alam liar melalui edukasi dan eksplorasi berkelanjutan.</p>
             </div>
 
             <div class="footer-links">
-                <a href="#">Dashboard</a>
-                <a href="#" class="active">Gallery</a>
-                <a href="#">Discovery</a>
-                <a href="#">Booking</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="discovery.html">Discovery</a>
+                <a href="tiketbooking.html">Booking</a>
             </div>
 
             <div class="footer-links">
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="#">Hubungi Kami</a>
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Syarat &amp; Ketentuan</a>
             </div>
 
         </div>
     </footer>
 
-</body>
+    <!-- Database Integration Script -->
+    <script src="../js/db.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const DB = window.RagunanDB;
+            if (!DB) return;
 
+            const dbData = await DB.getDatabaseData();
+            const faunaList = dbData.fauna || [];
+            const grid = document.querySelector('.gallery-grid');
+            if (!grid) return;
+
+            // Define premium grid card mappings
+            const cardClasses = [
+                'card card-featured',      // Card 1 (Harimau)
+                'card card-right-top',     // Card 2 (Gorila)
+                'card card-bottom-left',   // Card 3 (Gajah)
+                'card card-bottom-mid',    // Card 4 (Komodo)
+                'card card-bottom-right'   // Card 5 (Merak)
+            ];
+
+            const cardMetas = [
+                { badge: 'SOROTAN UTAMA', readTime: '8 mnt baca' },
+                { badge: 'PRIMATA RAGUNAN', readTime: '5 mnt baca' },
+                { badge: 'MAMALIA BESAR', readTime: '6 mnt baca' },
+                { badge: 'REPTIL PURBA', readTime: '4 mnt baca' },
+                { badge: 'AVES INDAH', readTime: '5 mnt baca' }
+            ];
+
+            // Render fauna cards
+            faunaList.forEach((fauna, index) => {
+                if (index >= 5) return;
+                const meta = cardMetas[index] || { badge: fauna.category, readTime: '5 mnt baca' };
+                const cssClass = cardClasses[index];
+
+                const cardHtml = `
+                    <div class="${cssClass}">
+                        <img src="${fauna.image}" alt="${fauna.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                        <div class="card-overlay">
+                            <div class="card-meta">
+                                <span class="badge-featured" style="background-color: ${index === 0 ? 'var(--color-accent)' : 'var(--color-green)'}">${meta.badge}</span>
+                                <span class="read-time">⏱ ${meta.readTime}</span>
+                            </div>
+                            <h2>${fauna.name}</h2>
+                            <p>${fauna.description}</p>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+
+            // Insert quote card as full width at the bottom (Row 4)
+            const quoteHtml = `
+                <div class="card card-quote" style="grid-column: 1 / 4; grid-row: 4 / 5; background-color: var(--color-card-bg); padding: 24px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px; border-radius: var(--radius-md);">
+                    <div class="quote-icon" style="font-family: var(--font-display); font-size: 36px; line-height: 1; color: var(--color-text-muted); opacity: 0.4; margin-bottom: 4px;">"</div>
+                    <blockquote style="font-family: var(--font-display); font-size: 14.5px; font-style: italic; color: var(--color-text); line-height: 1.6; margin-bottom: 12px;">
+                        "Setiap spesies yang kita amati menawarkan pelajaran sunyi tentang ketahanan hidup. Tugas kita hanyalah menjaga kelestarian mereka."
+                    </blockquote>
+                    <div class="quote-author" style="display: flex; align-items: center; gap: 12px;">
+                        <div class="author-avatar" style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #ddd;">
+                            <img src="../assets/anonym.jpg" alt="Dr. Elena Rostova" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
+                        <div>
+                            <div class="author-name" style="font-size: 12px; font-weight: 700; color: var(--color-text);">Dr. Elena Rostova</div>
+                            <div class="author-title" style="font-size: 11px; color: var(--color-text-muted);">Pakar Konservasi Satwa Ragunan</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', quoteHtml);
+
+            // Setup Filter Tab Clicks
+            const filterTabs = document.querySelectorAll('.filter-tabs .tab');
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const filterValue = tab.textContent.trim().toLowerCase();
+                    const cards = document.querySelectorAll('.gallery-grid .card');
+                    
+                    cards.forEach(card => {
+                        // Keep quote card visible
+                        if (card.classList.contains('card-quote')) {
+                            return;
+                        }
+
+                        const badgeElem = card.querySelector('.badge-featured');
+                        const categoryText = badgeElem ? badgeElem.textContent.trim().toLowerCase() : '';
+                        
+                        const isMamalia = categoryText.includes('mamalia') || categoryText.includes('primata') || categoryText.includes('sorotan');
+                        const isReptil = categoryText.includes('reptil');
+                        const isAves = categoryText.includes('aves');
+
+                        if (filterValue === 'semua lingkungan') {
+                            card.style.display = 'block';
+                        } else if (filterValue === 'mamalia' && isMamalia) {
+                            card.style.display = 'block';
+                        } else if (filterValue === 'reptil' && isReptil) {
+                            card.style.display = 'block';
+                        } else if (filterValue === 'aves' && isAves) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Article popup data
+            const articles = {
+                "f_01": {
+                    title: "Harimau Sumatera: Penguasa Rimba yang Terancam Punah",
+                    badge: "SOROTAN UTAMA · MAMALIA",
+                    content: "Harimau Sumatera (Panthera tigris sumatrae) adalah subspesies harimau terkecil yang masih bertahan hidup, dengan corak belang hitam tebal pada tubuhnya yang khas. Mereka merupakan perenang andal dan sangat menyukai air. Populasi mereka di alam liar diperkirakan hanya tersisa kurang dari 400 ekor akibat deforestasi dan perburuan liar. Upaya pelestarian di Kebun Binatang Ragunan fokus pada program pembiakan semi-alami untuk menjaga keragaman genetik satwa eksotis ini."
+                },
+                "f_05": {
+                    title: "Gorila Dataran Rendah: Raksasa Lembut dari Hutan Tropis",
+                    badge: "PRIMATA RAGUNAN · MAMALIA",
+                    content: "Meskipun memiliki tubuh yang kekar dan kekuatan fisik yang luar biasa, Gorila Dataran Rendah (Gorilla gorilla gorilla) dikenal sebagai raksasa yang lembut. Mereka adalah herbivora pemalu yang hidup berkelompok dipimpin oleh seekor pejantan tangguh berpunggung perak (silverback). Pusat Primata Schmutzer menyediakan habitat alami dengan pepohonan rindang dan area panjat tebing yang meniru hutan tropis Afrika untuk merangsang perilaku alami mereka."
+                },
+                "f_02": {
+                    title: "Gajah Sumatera: Sang Penjaga Ekosistem Hutan",
+                    badge: "MAMALIA BESAR",
+                    content: "Gajah Sumatera (Elephas maximus sumatranus) memainkan peran vital dalam menjaga kelestarian hutan dengan menyebarkan biji tanaman dan membuka jalur rimbun. Kehilangan habitat menjadi ancaman terbesar bagi gajah ini. Di Ragunan, mereka dirawat dengan stimulasi mental harian dan ruang jelajah yang luas untuk menjamin kesejahteraan fisik serta psikologis mereka."
+                },
+                "f_03": {
+                    title: "Komodo Dragon: Naga Purba Terakhir di Bumi",
+                    badge: "REPTIL PURBA",
+                    content: "Komodo (Varanus komodoensis) adalah spesies kadal terbesar di dunia yang merupakan satwa endemik purba Indonesia. Mereka berburu menggunakan kombinasi kamuflase, kecepatan, dan gigitan berbisa yang mematikan. Sebagai predator puncak, keberadaan mereka dilindungi dengan ketat di area konservasi khusus untuk menjaga kelangsungan evolusi fauna prasejarah ini."
+                },
+                "f_04": {
+                    title: "Burung Merak Biru: Simfoni Warna Alam Liar",
+                    badge: "AVES INDAH",
+                    content: "Merak Biru (Pavo cristatus) terkenal karena keindahan bulu ekor pejantannya yang membentuk kipas raksasa berwarna biru-hijau berkilau saat ritual memikat betina. Di alam liar, mereka menghuni hutan terbuka dan semak belukar. Taman konservasi Ragunan menghadirkan area aviary yang luas agar mereka dapat terbang bebas dan memamerkan keindahan warna mereka yang memikat pengunjung."
+                }
+            };
+
+            // Bind click events on cards to open modal reader
+            const cards = document.querySelectorAll('.gallery-grid .card');
+            faunaList.forEach((fauna, index) => {
+                if (index >= 5) return;
+                const cardElement = cards[index];
+                if (cardElement) {
+                    cardElement.style.cursor = 'pointer';
+                    cardElement.addEventListener('click', () => {
+                        openArticle(fauna.id, fauna.name, fauna.image, fauna.category);
+                    });
+                }
+            });
+
+            window.openArticle = function(id, name, img, category) {
+                const modal = document.getElementById('article-modal');
+                const article = articles[id] || {
+                    title: name,
+                    badge: category.toUpperCase(),
+                    content: "Kisah lengkap tentang satwa eksotis ini sedang dalam proses penyusunan oleh peneliti Ragunan."
+                };
+
+                document.getElementById('modal-img').src = img;
+                document.getElementById('modal-title').textContent = article.title;
+                document.getElementById('modal-badge').textContent = article.badge;
+                document.getElementById('modal-content').innerHTML = article.content;
+
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
+            };
+
+            window.closeArticle = function() {
+                const modal = document.getElementById('article-modal');
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            };
+
+            // Inject layout style for card-bottom-right
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .card-bottom-right {
+                    grid-column: 3 / 4;
+                    grid-row: 3 / 4;
+                    min-height: 280px;
+                }
+                @media (max-width: 600px) {
+                    .card-bottom-right {
+                        grid-column: 1 / 3;
+                        grid-row: 3 / 4;
+                    }
+                    .gallery-grid .card-quote {
+                        grid-column: 1 / 3 !important;
+                        grid-row: 5 / 6 !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+    <!-- Article Reader Modal -->
+    <div id="article-modal" onclick="if(event.target===this) closeArticle()" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,20,12,0.85); backdrop-filter: blur(12px); z-index: 1000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <div style="background: var(--color-bg); max-width: 680px; width: 90%; max-height: 85vh; overflow-y: auto; border-radius: var(--radius-lg); position: relative; box-shadow: 0 12px 40px rgba(0,0,0,0.3); text-align: left; padding: 0;">
+            <button onclick="closeArticle()" style="position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(0,0,0,0.6); color: white; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s;">✕</button>
+            <div style="width: 100%; height: 300px; position: relative;">
+                <img id="modal-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, var(--color-bg) 0%, transparent 100%);"></div>
+            </div>
+            <div style="padding: 32px; padding-top: 10px;">
+                <span id="modal-badge" class="badge-featured" style="background-color: var(--color-accent); margin-bottom: 12px; display: inline-block;">BADGE</span>
+                <h1 id="modal-title" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-text); margin-bottom: 16px; line-height: 1.2;">Title</h1>
+                <div id="modal-content" style="font-size: 15px; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 24px;">Content</div>
+                <div style="display: flex; gap: 12px;">
+                    <button class="btn-primary" onclick="window.location.href='tiketbooking.html'" style="padding: 10px 24px;">Pesan Tiket Kunjungan</button>
+                    <button class="btn-outline" onclick="closeArticle()" style="color: var(--color-text); border-color: var(--color-text-muted); padding: 10px 24px;">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = 3001;
 const DB_PATH = path.join(__dirname, 'database', 'db.json');
 
 // Helper to read database file safely
@@ -45,10 +45,29 @@ const server = http.createServer((req, res) => {
     }
 
     // Routing untuk static JSON API
-    if (req.url === '/api/db' && req.method === 'GET') {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(readDatabase()));
-        return;
+    if (req.url === '/api/db') {
+        if (req.method === 'GET') {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(readDatabase()));
+            return;
+        } else if (req.method === 'POST') {
+            let body = '';
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+            req.on('end', () => {
+                try {
+                    const data = JSON.parse(body);
+                    writeDatabase(data);
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true }));
+                } catch (err) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Format data tidak valid!' }));
+                }
+            });
+            return;
+        }
     }
 
     if (req.url === '/api/register' && req.method === 'POST') {

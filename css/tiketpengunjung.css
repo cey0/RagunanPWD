@@ -1,0 +1,200 @@
+/* Styling halaman Detail Pengunjung */
+
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.counter-container:last-of-type {
+    border-bottom: none;
+}
+
+.counter-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.counter-title {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+
+.counter-price {
+    font-size: 0.9rem;
+    color: var(--amber);
+    font-weight: 700;
+}
+
+.counter-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.counter-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.counter-btn-qty {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--white);
+    color: var(--dark);
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.counter-btn-qty:hover {
+    border-color: var(--green-mid);
+    background: var(--cream);
+    transform: scale(1.05);
+}
+
+.counter-val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    min-width: 28px;
+    text-align: center;
+    color: var(--dark);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-body);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark);
+    background: #fafaf8;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--green-mid);
+    background: var(--white);
+    outline: none;
+    box-shadow: 0 4px 12px rgba(45, 90, 64, 0.05);
+}
+
+.addon-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    margin-top: 24px;
+    background: #fafaf8;
+    transition: all 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.addon-card:hover {
+    border-color: var(--green-mid);
+    background: var(--white);
+}
+
+.addon-card.selected {
+    border-color: var(--green-deep);
+    background: #f4f7f5;
+}
+
+.addon-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    background: white;
+    margin-top: 3px;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.addon-card.selected .addon-checkbox {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+}
+
+.addon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.addon-badge {
+    background: var(--amber);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    width: fit-content;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.addon-title {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1rem;
+}
+
+.addon-price {
+    font-size: 0.85rem;
+    color: var(--amber);
+    font-weight: 700;
+}
+
+.addon-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.summary-ticket-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-body);
+    margin-top: 8px;
+    font-weight: 500;
+}

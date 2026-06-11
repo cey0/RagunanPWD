@@ -237,29 +237,23 @@ nav {
     backdrop-filter: blur(10px);
 }
 
-/* BOOKING CARD */
 .booking-card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.25rem;
-    max-width: 340px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 380px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .booking-card h3 {
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--amber);
-    margin-bottom: 1rem;
-}
-
-.booking-card h3::before {
-    content: '🎫';
-    font-size: 0.9rem;
-    margin-right: 0.4rem;
+    color: #112d21;
+    margin-bottom: 1.25rem;
 }
 
 .booking-fields {

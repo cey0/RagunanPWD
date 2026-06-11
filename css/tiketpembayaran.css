@@ -1,0 +1,200 @@
+/* Styling halaman Pembayaran Virtual Account */
+
+.va-display-card {
+    padding: 32px;
+    border: 2px dashed var(--border);
+    border-radius: 20px;
+    background: #fdfcf9;
+    text-align: center;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff4eb;
+    color: var(--amber);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.va-num-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 12px 24px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    margin: 12px 0;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+}
+
+.va-number {
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+
+.btn-copy {
+    background: var(--amber);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover {
+    background: var(--amber-light);
+}
+
+.instruction-section {
+    margin-top: 32px;
+    width: 100%;
+    text-align: left;
+}
+
+.instruction-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+.accordion-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: white;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 16px 20px;
+    font-weight: 600;
+    color: var(--text-body);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.accordion-content {
+    padding: 0 20px 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    display: none;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-item.active .accordion-header {
+    border-bottom: 1px solid var(--border);
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Success Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 20, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 460px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-success-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--green-deep);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 24px;
+    box-shadow: 0 6px 20px rgba(30, 58, 47, 0.3);
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.modal-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--green-deep);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-btn:hover {
+    background: var(--green-mid);
+}

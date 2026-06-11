@@ -1,0 +1,12 @@
+/* Styling khusus untuk Navbar Iframe */
+body {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav {
+    /* Pastikan menempati seluruh tinggi body iframe */
+    height: 64px;
+}

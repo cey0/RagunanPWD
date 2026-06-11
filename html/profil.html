@@ -4,11 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Pengguna - Buanantara</title>
+    <title>Profil Pengguna - Ragunan</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/profil.css">
+    <style>
+        /* Modal Informasi Pribadi */
+        .edit-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 20, 0.55);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 500;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .edit-modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .edit-modal {
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px;
+            width: 90%;
+            max-width: 460px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        .edit-modal-overlay.open .edit-modal {
+            transform: translateY(0);
+        }
+        .edit-modal h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a14;
+            margin-bottom: 24px;
+        }
+        /* Area upload avatar dalam modal */
+        .avatar-upload-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .avatar-preview {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0d8cc;
+        }
+        .btn-upload-photo {
+            background: none;
+            border: 1.5px dashed #c8762a;
+            color: #c8762a;
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-upload-photo:hover {
+            background: #fff4eb;
+        }
+        /* Input field modal */
+        .edit-field {
+            margin-bottom: 18px;
+        }
+        .edit-field label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #7a7a6a;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+        .edit-field input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid #e0d8cc;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            color: #1a1a14;
+            background: #fafaf8;
+            transition: border-color 0.2s;
+        }
+        .edit-field input:focus {
+            outline: none;
+            border-color: #2d5a40;
+            background: #fff;
+        }
+        /* Tombol aksi modal */
+        .edit-modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .btn-save-profile {
+            flex: 1;
+            padding: 14px;
+            background: #1e3a2f;
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-save-profile:hover { background: #2d5a40; }
+        .btn-cancel-modal {
+            padding: 14px 22px;
+            background: #f5f0e8;
+            color: #3a3a30;
+            border: none;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-cancel-modal:hover { background: #e8e0d0; }
+    </style>
 </head>
 
 <body>
@@ -23,8 +155,8 @@
         <section class="profile-hero">
             <div class="profile-info">
                 <div class="profile-avatar-wrapper">
-                    <!-- FOTO PROFIL -->
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Julian Thorne" class="profile-avatar" id="profile-photo">
+                    <!-- FOTO PROFIL — src diperbarui secara dinamis dari database -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Foto Profil" class="profile-avatar" id="profile-photo">
 
                     <!-- BADGE GOLD -->
                     <span class="profile-badge">
@@ -32,8 +164,8 @@
                     </span>
                 </div>
                 <div class="profile-details">
-                    <h1 id="profile-name">Julian Thorne</h1>
-                    <p class="member-since">📍 Anggota Sejak 2021</p>
+                    <h1 id="profile-name">Memuat...</h1>
+                    <p class="member-since">📍 Anggota Sejak 2026</p>
                 </div>
             </div>
 
@@ -56,49 +188,14 @@
         <!-- CONTENT GRID -->
         <div class="content-grid">
 
-            <!-- LEFT: YOUR EXPEDITIONS -->
+            <!-- LEFT: EKSPEDISI & TIKET -->
             <div class="expeditions-section">
                 <div class="section-header">
                     <h2 class="section-title">
                         <span class="icon">🧭</span> Ekspedisi Anda
                     </h2>
                 </div>
-
-                <!-- Card 1: Savannah Sunrise Safari -->
-                <div class="expedition-card dark">
-                    <div class="expedition-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&h=300&fit=crop');">
-                        <span class="badge">Mendatang</span>
-                    </div>
-                    <div class="expedition-content">
-                        <div>
-                            <div class="expedition-date">📅 Des 14, 2024 · 6:00 AM</div>
-                            <h3>Safari Matahari Terbit di Savannah</h3>
-                            <p>Bergabunglah bersama pemandu ahli kami dalam perjalanan pagi hari melintasi dataran terbuka untuk mengamati satwa liar yang sedang beraktivitas saat fajar.</p>
-                        </div>
-                        <div class="expedition-actions">
-                            <button class="btn-scan"> Kartu Akses</button>
-                            <button class="btn-details">Rincian</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Aquatic Night Tour -->
-                <div class="expedition-card light">
-                    <div class="expedition-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&h=300&fit=crop');">
-                        <span class="badge">Selesai</span>
-                    </div>
-                    <div class="expedition-content">
-                        <div>
-                            <div class="expedition-date" style="color: #888;">📅 Agt 12, 2024</div>
-                            <h3>Tur Malam di Perairan</h3>
-                        </div>
-                        <div class="expedition-actions">
-                            <span class="badge-completed">✓ Selesai</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- Kartu akan di-render dinamis oleh profil.js -->
             </div>
 
             <!-- RIGHT: WILD FAVORITES -->
@@ -108,32 +205,12 @@
                         <span class="icon">🔖</span> Favorit Liar
                     </h2>
                 </div>
-
-                <!-- Card: The Pride of the North -->
-                <div class="favorite-card"
-                    style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=300&fit=crop');">
-                    <span class="card-badge">🦁 Liar</span>
-                    <span class="card-title">Kebanggaan dari Utara</span>
-                </div>
-
-                <!-- Card: Canopy Colors -->
-                <div class="favorite-card"
-                    style="background-image: url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&h=300&fit=crop');">
-                    <span class="card-badge">🌿 Habitat</span>
-                    <span class="card-title">Warna Kanopi</span>
-                </div>
-
-                <!-- Card: Conservation Efforts -->
-                <div class="favorite-card text-card">
-                    <span class="card-badge">📝 Catatan Lapangan</span>
-                    <h4>Upaya Konservasi 2024</h4>
-                    <p>Baca tentang bagaimana keanggotaan Anda berkontribusi pada restorasi habitat lokal...</p>
-                </div>
+                <!-- Akan di-render dinamis oleh profil.js -->
             </div>
 
         </div>
 
-        <!-- ACCOUNT SETTINGS -->
+        <!-- ACCOUNT SETTINGS — hanya Informasi Pribadi -->
         <section class="settings-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -142,19 +219,12 @@
             </div>
 
             <div class="settings-list">
-                <div class="settings-item">
+                <!-- Klik untuk membuka modal edit profil -->
+                <div class="settings-item" id="btn-open-edit" style="cursor: pointer;">
                     <div class="settings-icon">👤</div>
                     <div class="settings-info">
                         <h4>Informasi Pribadi</h4>
-                        <p>Perbarui email, nomor telepon, dan alamat.</p>
-                    </div>
-                    <span class="settings-arrow">›</span>
-                </div>
-                <div class="settings-item">
-                    <div class="settings-icon">💳</div>
-                    <div class="settings-info">
-                        <h4>Metode Pembayaran</h4>
-                        <p>Kelola kartu dan riwayat penagihan</p>
+                        <p>Perbarui nama tampilan dan foto profil Anda.</p>
                     </div>
                     <span class="settings-arrow">›</span>
                 </div>
@@ -163,36 +233,141 @@
 
     </div>
 
+    <!-- MODAL EDIT INFORMASI PRIBADI -->
+    <div class="edit-modal-overlay" id="edit-modal-overlay">
+        <div class="edit-modal">
+            <h3>✏️ Edit Informasi Pribadi</h3>
+
+            <!-- Preview & Upload Foto -->
+            <div class="avatar-upload-area">
+                <img id="modal-avatar-preview" src="" alt="Preview Foto" class="avatar-preview">
+                <button class="btn-upload-photo" onclick="document.getElementById('avatar-file-input').click()">
+                    📷 Ganti Foto Profil
+                </button>
+                <!-- Input file tersembunyi -->
+                <input type="file" id="avatar-file-input" accept="image/*" style="display:none;">
+            </div>
+
+            <!-- Field Nama -->
+            <div class="edit-field">
+                <label for="edit-name-input">Nama Lengkap</label>
+                <input type="text" id="edit-name-input" placeholder="Masukkan nama Anda">
+            </div>
+
+            <!-- Tombol Simpan / Batal -->
+            <div class="edit-modal-actions">
+                <button class="btn-save-profile" onclick="saveProfile()">Simpan Perubahan</button>
+                <button class="btn-cancel-modal" onclick="closeEditModal()">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL E-TICKET -->
+    <div class="ticket-modal-overlay" id="ticket-modal-overlay">
+        <div class="ticket-modal-wrapper">
+            <!-- Kartu E-Tiket -->
+            <div class="eticket-card" id="eticket-card">
+
+                <!-- Header tiket: brand | badge | tombol tutup -->
+                <div class="eticket-header">
+                    <div class="eticket-brand">
+                        <div class="eticket-brand-dot"></div>
+                        <span>Ragunan</span>
+                    </div>
+                    <span class="eticket-status-badge" id="eticket-status">Aktif</span>
+                    <button class="ticket-close-btn" onclick="closeTicketModal()">✕</button>
+                </div>
+
+                <h2 class="eticket-title">E-Tiket Kunjungan</h2>
+                <p class="eticket-subtitle">Kebun Binatang Ragunan · Jakarta Selatan</p>
+
+                <!-- Info Grid -->
+                <div class="eticket-info-grid">
+                    <div class="eticket-info-item">
+                        <div class="eticket-info-label">Tanggal Kunjungan</div>
+                        <div class="eticket-info-value" id="eticket-date">-</div>
+                    </div>
+                    <div class="eticket-info-item">
+                        <div class="eticket-info-label">Waktu</div>
+                        <div class="eticket-info-value" id="eticket-time">-</div>
+                    </div>
+                    <div class="eticket-info-item">
+                        <div class="eticket-info-label">Nama Kontak</div>
+                        <div class="eticket-info-value" id="eticket-name">-</div>
+                    </div>
+                    <div class="eticket-info-item">
+                        <div class="eticket-info-label">Pengunjung</div>
+                        <div class="eticket-info-value" id="eticket-visitors">-</div>
+                    </div>
+                </div>
+
+                <!-- Garis perforated (seperti tiket fisik) -->
+                <div class="eticket-perforated">
+                    <div class="perf-hole perf-left"></div>
+                    <div class="perf-line"></div>
+                    <div class="perf-hole perf-right"></div>
+                </div>
+
+                <!-- Bagian bawah: QR + total -->
+                <div class="eticket-footer">
+                    <!-- QR Code placeholder -->
+                    <div class="eticket-qr">
+                        <div class="qr-inner" id="eticket-qr-id">
+                            <!-- Simulasi QR pattern -->
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect x="2" y="2" width="24" height="24" rx="2" stroke="#1e3a2f" stroke-width="2" fill="none"/>
+                                <rect x="7" y="7" width="14" height="14" rx="1" fill="#1e3a2f"/>
+                                <rect x="54" y="2" width="24" height="24" rx="2" stroke="#1e3a2f" stroke-width="2" fill="none"/>
+                                <rect x="59" y="7" width="14" height="14" rx="1" fill="#1e3a2f"/>
+                                <rect x="2" y="54" width="24" height="24" rx="2" stroke="#1e3a2f" stroke-width="2" fill="none"/>
+                                <rect x="7" y="59" width="14" height="14" rx="1" fill="#1e3a2f"/>
+                                <rect x="32" y="4" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="40" y="4" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="36" y="8" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="44" y="12" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="32" y="16" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="32" y="32" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="40" y="32" width="4" height="12" fill="#1e3a2f"/>
+                                <rect x="48" y="32" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="56" y="32" width="12" height="4" fill="#1e3a2f"/>
+                                <rect x="32" y="40" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="48" y="40" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="60" y="40" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="32" y="48" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="44" y="48" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="56" y="48" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="64" y="48" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="36" y="56" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="44" y="56" width="4" height="4" fill="#1e3a2f"/>
+                                <rect x="52" y="56" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="64" y="56" width="8" height="8" fill="#1e3a2f"/>
+                                <rect x="32" y="64" width="4" height="8" fill="#1e3a2f"/>
+                                <rect x="40" y="68" width="8" height="4" fill="#1e3a2f"/>
+                                <rect x="52" y="64" width="4" height="4" fill="#1e3a2f"/>
+                            </svg>
+                        </div>
+                        <div class="qr-label">Scan di pintu masuk</div>
+                    </div>
+
+                    <!-- Total & kode tiket -->
+                    <div class="eticket-right">
+                        <div class="eticket-total-label">Total Dibayar</div>
+                        <div class="eticket-total-value" id="eticket-total">Rp -</div>
+                        <div class="eticket-code" id="eticket-code">-</div>
+                        <div class="eticket-note">Tunjukkan tiket ini ke petugas loket</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tombol download (simulasi) -->
+            <button class="ticket-download-btn" onclick="alert('Fitur unduh tiket akan segera hadir!')">⬇ Unduh Tiket PDF</button>
+        </div>
+    </div>
+
     <!-- Database Integration -->
     <script src="../js/db.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const DB = window.BuanantaraDB;
-            const currentUser = DB.getCurrentUser();
-            if (currentUser) {
-                document.getElementById('profile-name').textContent = currentUser.fullName;
-                const photo = document.getElementById('profile-photo');
-                if (photo && currentUser.avatar) {
-                    photo.src = currentUser.avatar;
-                }
-                const dateElement = document.querySelector('.member-since');
-                if (dateElement) {
-                    dateElement.textContent = `📍 Anggota Sejak ${currentUser.memberSince || 2026}`;
-                }
-                
-                // Update profile stats dynamically from user stats
-                const statBoxes = document.querySelectorAll('.profile-stats .stat-number');
-                if (statBoxes.length >= 3 && currentUser.stats) {
-                    statBoxes[0].textContent = currentUser.stats.kunjungan || 0;
-                    statBoxes[1].textContent = currentUser.stats.ceritaTersimpan || 0;
-                    statBoxes[2].textContent = currentUser.stats.mendatang || 0;
-                }
-            } else {
-                // If not logged in, redirect to login page
-                window.location.href = 'login.html';
-            }
-        });
-    </script>
+    <script src="../js/profil.js"></script>
 </body>
 
 </html>

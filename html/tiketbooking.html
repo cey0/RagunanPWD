@@ -3,19 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buanantara - Booking</title>
+<title>Ragunan - Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/tiketbooking.css">
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-    <div class="logo">
-        <div>Buanantara</div>
-        
-    </div>
-    <button class="cancel-btn">✕ Batalkan Pemesanan</button>
-</header>
+<!-- NAVBAR -->
+<iframe src="navbar.html" style="width: 100%; height: 64px; border: none; display: block; position: sticky; top: 0; z-index: 100; overflow: hidden;" scrolling="no"></iframe>
 
 <!-- Progress Steps -->
 <div class="progress-container">
@@ -37,49 +32,14 @@
 <!-- Main Content -->
 <div class="main-container">
     <div class="left-content">
-
         <!-- Choose Visit Date -->
         <div class="card">
             <div class="card-header">
                 <div class="card-title">1. Pilih Tanggal Kunjungan</div>
-                <div class="nav-arrows">
-                    <button class="nav-arrow">‹</button>
-                    <button class="nav-arrow">›</button>
-                </div>
             </div>
             <div class="card-subtitle">Pilih tanggal untuk petualangan alam liar Anda. Tiket berlaku untuk seharian penuh.</div>
-            <div class="date-selector">
-                <div class="date-card disabled">
-                    <div class="date-day">SELASA</div>
-                    <div class="date-number">14</div>
-                    <div class="date-month">Mei</div>
-                </div>
-                <div class="date-card selected">
-                    <div class="date-day">RABU</div>
-                    <div class="date-number">15</div>
-                    <div class="date-month">Mei</div>
-                </div>
-                <div class="date-card">
-                    <div class="date-day">KAMIS</div>
-                    <div class="date-number">16</div>
-                    <div class="date-month">Mei</div>
-                </div>
-                <div class="date-card">
-                    <div class="date-day">JUMAT</div>
-                    <div class="date-number">17</div>
-                    <div class="date-month">Mei</div>
-                </div>
-                <div class="date-card">
-                    <div class="peak-badge">Puncak</div>
-                    <div class="date-day">Sabtu</div>
-                    <div class="date-number">18</div>
-                    <div class="date-month">Mei</div>
-                </div>
-                <div class="date-card">
-                    <div class="date-day">MINGGU</div>
-                    <div class="date-number">19</div>
-                    <div class="date-month">Mei</div>
-                </div>
+            <div class="date-selector" id="dynamic-dates">
+                <!-- Dynamically loaded date cards will be inserted here -->
             </div>
         </div>
 
@@ -88,20 +48,20 @@
             <div class="card-title" style="margin-bottom: 12px;">2. Pilih Waktu Kedatangan</div>
             <div class="card-subtitle">Membantu kami mengelola kapasitas taman dan memastikan pengalaman yang damai bagi hewan-hewan.</div>
             <div class="time-selector">
-                <div class="time-card">
+                <div class="time-card" data-time="Pagi (9:00 AM - 12:00 PM)">
                     <span class="time-icon">🌤</span>
                     <div class="time-label">Pagi</div>
                     <div class="time-range">9:00 AM - 12:00 PM</div>
                 </div>
-                <div class="time-card selected">
+                <div class="time-card selected" data-time="Menjelang Siang (12:00 PM - 3:00 PM)">
                     <div class="check-badge">✓</div>
                     <span class="time-icon">☀</span>
                     <div class="time-label">Menjelang siang</div>
                     <div class="time-range">12:00 PM - 3:00 PM</div>
                 </div>
-                <div class="time-card">
+                <div class="time-card" data-time="Sore (3:00 PM - 6:00 PM)">
                     <span class="time-icon">🌥</span>
-                    <div class="time-label">sore</div>
+                    <div class="time-label">Sore</div>
                     <div class="time-range">3:00 PM - 6:00 PM</div>
                 </div>
             </div>
@@ -118,7 +78,7 @@
                 <span class="summary-icon">📅</span>
                 <div>
                     <div class="summary-item-label">Tanggal Kunjungan</div>
-                    <div class="summary-item-value">Rabu, 15 Mei 2024</div>
+                    <div class="summary-item-value" id="summary-date-val">-</div>
                 </div>
             </div>
             <a class="edit-link">Edit</a>
@@ -129,7 +89,7 @@
                 <span class="summary-icon">🕐</span>
                 <div>
                     <div class="summary-item-label">Waktu Kedatangan</div>
-                    <div class="summary-item-value">Menjelang Siang (12PM - 3PM)</div>
+                    <div class="summary-item-value" id="summary-time-val">Menjelang Siang (12:00 PM - 3:00 PM)</div>
                 </div>
             </div>
         </div>
@@ -148,11 +108,11 @@
 
         <div class="summary-total">
             <div class="summary-total-label">Subtotal</div>
-            <div class="summary-total-value">$0.00</div>
+            <div class="summary-total-value" id="summary-total-val">Rp 4.000</div>
         </div>
         <div class="tax-note">Pajak dihitung saat pembayaran.</div>
 
-        <button class="continue-btn">Lanjutkan ke Pengunjung →</button>
+        <button class="continue-btn" onclick="continueToVisitors()">Lanjutkan ke Pengunjung →</button>
 
         <div class="secure-note">
             🔒 Proses Pemesanan Aman
@@ -160,5 +120,6 @@
     </aside>
 </div>
 
+<script src="../js/tiketbooking.js"></script>
 </body>
 </html>

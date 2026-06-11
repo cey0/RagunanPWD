@@ -120,7 +120,7 @@ html, body {
 
 /* ---- CONTAINER ---- */
 .container {
-    max-width: 660px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px 60px;
 }
@@ -132,15 +132,15 @@ html, body {
 
 .hero-text h1 {
     font-family: var(--font-display);
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 700;
     color: var(--color-text);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--color-text-muted);
     line-height: 1.65;
 }
@@ -182,13 +182,13 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 40px;
 }
 
 /* Card base */
 .card {
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
     background-color: #2a3a2e;
@@ -206,8 +206,8 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 16px;
-    background: linear-gradient(to top, rgba(10,20,12,0.92) 0%, rgba(10,20,12,0.4) 70%, transparent 100%);
+    padding: 24px;
+    background: linear-gradient(to top, rgba(10,20,12,0.95) 0%, rgba(10,20,12,0.4) 70%, transparent 100%);
     color: var(--color-white);
 }
 
@@ -215,7 +215,7 @@ html, body {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .badge-featured {
@@ -236,15 +236,15 @@ html, body {
 
 .card-overlay h2 {
     font-family: var(--font-display);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .card-overlay p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
     line-height: 1.5;
 }
 
@@ -252,32 +252,32 @@ html, body {
 .card-featured {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
-    min-height: 380px;
+    min-height: 480px;
 }
 
 .card-featured .card-overlay h2 {
-    font-size: 26px;
+    font-size: 32px;
 }
 
 /* Top right card — spans 1 col, 2 rows */
 .card-right-top {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
-    min-height: 380px;
+    min-height: 480px;
 }
 
 /* Bottom left card */
 .card-bottom-left {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
-    min-height: 180px;
+    min-height: 280px;
 }
 
 /* Bottom middle card */
 .card-bottom-mid {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    min-height: 180px;
+    min-height: 280px;
 }
 
 /* Quote card */
@@ -436,7 +436,7 @@ html, body {
 }
 
 .footer-inner {
-    max-width: 660px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: flex-start;

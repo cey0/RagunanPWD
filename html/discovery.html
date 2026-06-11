@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buanantara - Discovery</title>
+    <title>Ragunan - Discovery</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -166,30 +166,7 @@
 
     <!-- Database Integration -->
     <script src="../js/db.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const DB = window.BuanantaraDB;
-            const currentUser = DB.getCurrentUser();
-            if (currentUser) {
-                document.getElementById('profile-name').textContent = currentUser.fullName;
-                const dateElement = document.querySelector('.member-since');
-                if (dateElement) {
-                    dateElement.textContent = `📍 Anggota Sejak ${currentUser.memberSince || 2026}`;
-                }
-                
-                // Update profile stats dynamically from user stats
-                const statBoxes = document.querySelectorAll('.profile-stats .stat-number');
-                if (statBoxes.length >= 3 && currentUser.stats) {
-                    statBoxes[0].textContent = currentUser.stats.kunjungan || 0;
-                    statBoxes[1].textContent = currentUser.stats.ceritaTersimpan || 0;
-                    statBoxes[2].textContent = currentUser.stats.mendatang || 0;
-                }
-            } else {
-                // If not logged in, redirect to login page
-                window.location.href = 'login.html';
-            }
-        });
-    </script>
+    <script src="../js/discovery.js"></script>
 </body>
 
 </html>

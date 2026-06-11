@@ -11,7 +11,7 @@
       "stats": {
         "kunjungan": 12,
         "ceritaTersimpan": 8,
-        "mendatang": 2
+        "mendatang": 3
       }
     },
     {
@@ -29,7 +29,23 @@
       }
     }
   ],
-  "bookings": [],
+  "bookings": [
+    {
+      "id": "bkg_1781183767404",
+      "userId": "usr_1781179537482",
+      "visitorName": "ceyo",
+      "visitorPhone": "081212864365",
+      "visitorEmail": "ceyo@demo.com",
+      "visitDate": "Jumat, 12 Jun 2026",
+      "visitTime": "Menjelang Siang (12:00 PM - 3:00 PM)",
+      "qtyDewasa": 3,
+      "qtyAnak": 0,
+      "addonSchmutzer": true,
+      "total": 30000,
+      "status": "Selesai",
+      "createdAt": "2026-06-11T13:16:07.404Z"
+    }
+  ],
   "settings": {
     "initializedAt": "2026-06-11T11:55:00.000Z"
   },
