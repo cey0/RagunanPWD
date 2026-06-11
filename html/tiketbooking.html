@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buanantara - Booking</title>
+<link rel="stylesheet" href="../css/tiketbooking.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <div>Buanantara</div>
+        
+    </div>
+    <button class="cancel-btn">✕ Batalkan Pemesanan</button>
+</header>
+
+<!-- Progress Steps -->
+<div class="progress-container">
+    <div class="progress-line"></div>
+    <div class="step active">
+        <div class="step-circle">1</div>
+        <div class="step-label">Jadwal</div>
+    </div>
+    <div class="step">
+        <div class="step-circle">2</div>
+        <div class="step-label">Pengunjung</div>
+    </div>
+    <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Pembayaran</div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-container">
+    <div class="left-content">
+
+        <!-- Choose Visit Date -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">1. Pilih Tanggal Kunjungan</div>
+                <div class="nav-arrows">
+                    <button class="nav-arrow">‹</button>
+                    <button class="nav-arrow">›</button>
+                </div>
+            </div>
+            <div class="card-subtitle">Pilih tanggal untuk petualangan alam liar Anda. Tiket berlaku untuk seharian penuh.</div>
+            <div class="date-selector">
+                <div class="date-card disabled">
+                    <div class="date-day">SELASA</div>
+                    <div class="date-number">14</div>
+                    <div class="date-month">Mei</div>
+                </div>
+                <div class="date-card selected">
+                    <div class="date-day">RABU</div>
+                    <div class="date-number">15</div>
+                    <div class="date-month">Mei</div>
+                </div>
+                <div class="date-card">
+                    <div class="date-day">KAMIS</div>
+                    <div class="date-number">16</div>
+                    <div class="date-month">Mei</div>
+                </div>
+                <div class="date-card">
+                    <div class="date-day">JUMAT</div>
+                    <div class="date-number">17</div>
+                    <div class="date-month">Mei</div>
+                </div>
+                <div class="date-card">
+                    <div class="peak-badge">Puncak</div>
+                    <div class="date-day">Sabtu</div>
+                    <div class="date-number">18</div>
+                    <div class="date-month">Mei</div>
+                </div>
+                <div class="date-card">
+                    <div class="date-day">MINGGU</div>
+                    <div class="date-number">19</div>
+                    <div class="date-month">Mei</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Arrival Time -->
+        <div class="card">
+            <div class="card-title" style="margin-bottom: 12px;">2. Pilih Waktu Kedatangan</div>
+            <div class="card-subtitle">Membantu kami mengelola kapasitas taman dan memastikan pengalaman yang damai bagi hewan-hewan.</div>
+            <div class="time-selector">
+                <div class="time-card">
+                    <span class="time-icon">🌤</span>
+                    <div class="time-label">Pagi</div>
+                    <div class="time-range">9:00 AM - 12:00 PM</div>
+                </div>
+                <div class="time-card selected">
+                    <div class="check-badge">✓</div>
+                    <span class="time-icon">☀</span>
+                    <div class="time-label">Menjelang siang</div>
+                    <div class="time-range">12:00 PM - 3:00 PM</div>
+                </div>
+                <div class="time-card">
+                    <span class="time-icon">🌥</span>
+                    <div class="time-label">sore</div>
+                    <div class="time-range">3:00 PM - 6:00 PM</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Order Summary -->
+    <aside class="order-summary">
+        <div class="summary-title">Ringkasan Pesanan</div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">📅</span>
+                <div>
+                    <div class="summary-item-label">Tanggal Kunjungan</div>
+                    <div class="summary-item-value">Rabu, 15 Mei 2024</div>
+                </div>
+            </div>
+            <a class="edit-link">Edit</a>
+        </div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">🕐</span>
+                <div>
+                    <div class="summary-item-label">Waktu Kedatangan</div>
+                    <div class="summary-item-value">Menjelang Siang (12PM - 3PM)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <span class="summary-icon">👥</span>
+                <div>
+                    <div class="summary-item-label">Pengunjung</div>
+                    <div class="summary-item-value">Pilih di langkah selanjutnya</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="summary-total">
+            <div class="summary-total-label">Subtotal</div>
+            <div class="summary-total-value">$0.00</div>
+        </div>
+        <div class="tax-note">Pajak dihitung saat pembayaran.</div>
+
+        <button class="continue-btn">Lanjutkan ke Pengunjung →</button>
+
+        <div class="secure-note">
+            🔒 Proses Pemesanan Aman
+        </div>
+    </aside>
+</div>
+
+</body>
+</html>
