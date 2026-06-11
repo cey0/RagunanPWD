@@ -4,183 +4,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Pengguna - Wilderness & Discovery</title>
+    <title>Profil Pengguna - Buanantara</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/profil.css">
 </head>
 
 <body>
 
-    <div class="top-header">Profil Pengguna</div>
+    <!-- NAVBAR -->
+    <iframe src="navbar.html" style="width: 100%; height: 64px; border: none; display: block; position: sticky; top: 0; z-index: 100; overflow: hidden;" scrolling="no"></iframe>
 
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <span class="icon">🌿</span>
-            Wilderness & Discovery
-        </div>
-        <div class="navbar-links">
-            <a href="#" class="active">Dashboard</a>
-            <a href="#">Gallery</a>
-            <a href="#">Discovery</a>
-            <a href="#">Booking</a>
-        </div>
-        <div class="navbar-actions">
-            <a href="#" class="btn-signin">Sign In</a>
-            <a href="#" class="btn-join">Join Now</a>
-        </div>
-    </nav>
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-    <div class="main-content">
-
-        <!-- Profile Banner -->
-        <div class="profile-banner">
+        <!-- PROFILE HERO -->
+        <section class="profile-hero">
             <div class="profile-info">
-                <div class="profile-avatar">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
-                        alt="Julian Thorne">
-                    <span class="gold-badge">+ Gold</span>
+                <div class="profile-avatar-wrapper">
+                    <!-- FOTO PROFIL -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Julian Thorne" class="profile-avatar" id="profile-photo">
+
+                    <!-- BADGE GOLD -->
+                    <span class="profile-badge">
+                        <span>⭐</span> Gold
+                    </span>
                 </div>
                 <div class="profile-details">
-                    <h2>Julian Thorne</h2>
-                    <p> Member since 2021</p>
+                    <h1 id="profile-name">Julian Thorne</h1>
+                    <p class="member-since">📍 Anggota Sejak 2021</p>
                 </div>
             </div>
-            <div class="profile-stats">
-                <div class="stat-item">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Visits</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Saved Stories</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Upcoming</div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Content Grid -->
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">KUNJUNGAN</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">CERITA TERSIMPAN</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">MENDATANG</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT GRID -->
         <div class="content-grid">
 
-            <!-- Your Expeditions -->
-            <div class="expeditions-column">
+            <!-- LEFT: YOUR EXPEDITIONS -->
+            <div class="expeditions-section">
                 <div class="section-header">
-                    <div class="section-title">
-                        <span class="dot"></span>
-                        Your Expeditions
-                    </div>
-                    <a href="#" class="view-all">View All</a>
+                    <h2 class="section-title">
+                        <span class="icon">🧭</span> Ekspedisi Anda
+                    </h2>
                 </div>
 
-                <div class="expedition-card featured">
-                    <div class="exp-image">
-                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&h=300&fit=crop"
-                            alt="Savannah">
-                        <span class="exp-badge">Upcoming</span>
+                <!-- Card 1: Savannah Sunrise Safari -->
+                <div class="expedition-card dark">
+                    <div class="expedition-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&h=300&fit=crop');">
+                        <span class="badge">Mendatang</span>
                     </div>
-                    <div class="exp-content">
-                        <div class="exp-date">📅 Dec 14, 2024 · 6:00 AM</div>
-                        <h3>Savannah Sunrise Safari</h3>
-                        <p>Join our expert guides for an early morning journey through the open plains to observe the
-                            active wildlife at dawn.</p>
-                        <div class="exp-footer">
-                            <div class="exp-guide">
-                                <div class="exp-guide-icon"></div>
-                                <span>Guide: Alex</span>
-                            </div>
-                            <button class="btn-details">Details</button>
+                    <div class="expedition-content">
+                        <div>
+                            <div class="expedition-date">📅 Des 14, 2024 · 6:00 AM</div>
+                            <h3>Safari Matahari Terbit di Savannah</h3>
+                            <p>Bergabunglah bersama pemandu ahli kami dalam perjalanan pagi hari melintasi dataran terbuka untuk mengamati satwa liar yang sedang beraktivitas saat fajar.</p>
+                        </div>
+                        <div class="expedition-actions">
+                            <button class="btn-scan"> Kartu Akses</button>
+                            <button class="btn-details">Rincian</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="expedition-card completed">
-                    <div class="completed-image">
-                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=300&h=200&fit=crop"
-                            alt="Turtle">
+                <!-- Card 2: Aquatic Night Tour -->
+                <div class="expedition-card light">
+                    <div class="expedition-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&h=300&fit=crop');">
+                        <span class="badge">Selesai</span>
                     </div>
-                    <div class="completed-content">
-                        <div class="exp-date">📅 Aug 12, 2024</div>
-                        <h3>Aquatic Night Tour</h3>
-                        <span class="status-badge completed">Completed</span>
+                    <div class="expedition-content">
+                        <div>
+                            <div class="expedition-date" style="color: #888;">📅 Agt 12, 2024</div>
+                            <h3>Tur Malam di Perairan</h3>
+                        </div>
+                        <div class="expedition-actions">
+                            <span class="badge-completed">✓ Selesai</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Wild Favorites -->
-            <div class="favorites-column">
+            <!-- RIGHT: WILD FAVORITES -->
+            <div class="favorites-section">
                 <div class="section-header">
-                    <div class="section-title">
-                        <span class="dot orange"></span>
-                        Wild Favorites
-                    </div>
+                    <h2 class="section-title">
+                        <span class="icon">🔖</span> Favorit Liar
+                    </h2>
                 </div>
 
-                <div class="fav-card">
-                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=250&fit=crop"
-                        alt="Lion">
-                    <div class="fav-card-overlay">
-                        <span class="fav-tag">Lion</span>
-                        <h4>The Pride of the North</h4>
-                    </div>
+                <!-- Card: The Pride of the North -->
+                <div class="favorite-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=300&fit=crop');">
+                    <span class="card-badge">🦁 Liar</span>
+                    <span class="card-title">Kebanggaan dari Utara</span>
                 </div>
 
-                <div class="fav-card">
-                    <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&h=250&fit=crop"
-                        alt="Parrot">
-                    <div class="fav-card-overlay">
-                        <span class="fav-tag">Macaw</span>
-                        <h4>Canopy Colors</h4>
-                    </div>
+                <!-- Card: Canopy Colors -->
+                <div class="favorite-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&h=300&fit=crop');">
+                    <span class="card-badge">🌿 Habitat</span>
+                    <span class="card-title">Warna Kanopi</span>
                 </div>
 
-                <div class="fav-card text-card">
-                    <span class="field-note-tag">📋 Field Notes</span>
-                    <h4>Conservation Efforts 2024</h4>
-                    <p>Read about how your membership contributes to local habitat restoration...</p>
+                <!-- Card: Conservation Efforts -->
+                <div class="favorite-card text-card">
+                    <span class="card-badge">📝 Catatan Lapangan</span>
+                    <h4>Upaya Konservasi 2024</h4>
+                    <p>Baca tentang bagaimana keanggotaan Anda berkontribusi pada restorasi habitat lokal...</p>
                 </div>
             </div>
+
         </div>
 
-        <!-- Account Settings -->
-        <div class="settings-section">
+        <!-- ACCOUNT SETTINGS -->
+        <section class="settings-section">
             <div class="section-header">
-                <div class="section-title">
-                    <span class="dot"></span>
-                    Account Settings
-                </div>
+                <h2 class="section-title">
+                    <span class="icon">⚙️</span> Pengaturan Akun
+                </h2>
             </div>
 
-            <div class="settings-card">
+            <div class="settings-list">
                 <div class="settings-item">
-                    <div class="settings-icon personal">👤</div>
+                    <div class="settings-icon">👤</div>
                     <div class="settings-info">
-                        <h4>Personal Information</h4>
-                        <p>Update email, phone, and address</p>
+                        <h4>Informasi Pribadi</h4>
+                        <p>Perbarui email, nomor telepon, dan alamat.</p>
                     </div>
                     <span class="settings-arrow">›</span>
                 </div>
                 <div class="settings-item">
-                    <div class="settings-icon payment">💳</div>
+                    <div class="settings-icon">💳</div>
                     <div class="settings-info">
-                        <h4>Payment Methods</h4>
-                        <p>Manage cards and billing history</p>
-                    </div>
-                    <span class="settings-arrow">›</span>
-                </div>
-                <div class="settings-item">
-                    <div class="settings-icon preferences">️</div>
-                    <div class="settings-info">
-                        <h4>Preferences</h4>
-                        <p>Communication and accessibility settings</p>
+                        <h4>Metode Pembayaran</h4>
+                        <p>Kelola kartu dan riwayat penagihan</p>
                     </div>
                     <span class="settings-arrow">›</span>
                 </div>
             </div>
-        </div>
+        </section>
 
     </div>
 
+    <!-- Database Integration -->
+    <script src="../js/db.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DB = window.BuanantaraDB;
+            const currentUser = DB.getCurrentUser();
+            if (currentUser) {
+                document.getElementById('profile-name').textContent = currentUser.fullName;
+                const photo = document.getElementById('profile-photo');
+                if (photo && currentUser.avatar) {
+                    photo.src = currentUser.avatar;
+                }
+                const dateElement = document.querySelector('.member-since');
+                if (dateElement) {
+                    dateElement.textContent = `📍 Anggota Sejak ${currentUser.memberSince || 2026}`;
+                }
+                
+                // Update profile stats dynamically from user stats
+                const statBoxes = document.querySelectorAll('.profile-stats .stat-number');
+                if (statBoxes.length >= 3 && currentUser.stats) {
+                    statBoxes[0].textContent = currentUser.stats.kunjungan || 0;
+                    statBoxes[1].textContent = currentUser.stats.ceritaTersimpan || 0;
+                    statBoxes[2].textContent = currentUser.stats.mendatang || 0;
+                }
+            } else {
+                // If not logged in, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 
 </html>

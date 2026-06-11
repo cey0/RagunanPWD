@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "fullName": "ceyo",
+      "email": "ceyo@demo.com",
+      "password": "123456",
+      "id": "usr_1781179537482",
+      "membership": "Gold",
+      "memberSince": 2026,
+      "avatar": "../assets/anonym.jpg",
+      "stats": {
+        "kunjungan": 12,
+        "ceritaTersimpan": 8,
+        "mendatang": 2
+      }
+    },
+    {
+      "fullName": "Ceyo Test",
+      "email": "ceyo2@demo.com",
+      "password": "123456",
+      "id": "usr_1781179641368",
+      "membership": "Gold",
+      "memberSince": 2026,
+      "avatar": "../assets/anonym.jpg",
+      "stats": {
+        "kunjungan": 0,
+        "ceritaTersimpan": 0,
+        "mendatang": 0
+      }
+    }
+  ],
+  "bookings": [],
+  "settings": {
+    "initializedAt": "2026-06-11T11:55:00.000Z"
+  },
+  "fauna": [
+    {
+      "id": "f_01",
+      "name": "Harimau Sumatera",
+      "category": "Mamalia",
+      "description": "Subspesies harimau langka yang hanya ditemukan di Pulau Sumatera Indonesia.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Felidae_Panthera_tigris_sumatrae_3.jpg"
+    },
+    {
+      "id": "f_02",
+      "name": "Gajah Sumatera",
+      "category": "Mamalia",
+      "description": "Mamalia darat besar eksotis khas hutan tropis Sumatera.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sumatran_elephant_Elephas_maximus_sumatranus_Ragunan_Zoo.JPG"
+    },
+    {
+      "id": "f_03",
+      "name": "Komodo Dragon",
+      "category": "Reptil",
+      "description": "Kadal terbesar di dunia yang merupakan spesies endemik purba Indonesia.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Komodo_dragon_Varanus_komodoensis_Ragunan_Zoo_2.JPG"
+    },
+    {
+      "id": "f_04",
+      "name": "Burung Merak Biru",
+      "category": "Aves",
+      "description": "Spesies burung hias dengan ekor menawan indah yang memikat mata.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Indian_Peacock_Pavo_cristatus_at_Ragunan_Zoo.jpg"
+    },
+    {
+      "id": "f_05",
+      "name": "Gorila Dataran Rendah",
+      "category": "Mamalia",
+      "description": "Koleksi primata eksotis di Pusat Primata Schmutzer Ragunan.",
+      "image": "https://ragunanzoo.jakarta.go.id/wp-content/uploads/2014/12/Gorila-img.jpg"
+    }
+  ],
+  "attractions": [
+    {
+      "id": "a_01",
+      "name": "Pusat Primata Schmutzer",
+      "priceWeekday": 6000,
+      "priceWeekend": 7500,
+      "description": "Kompleks konservasi primata kelas dunia konsep open zoo."
+    },
+    {
+      "id": "a_02",
+      "name": "Tiket Masuk Utama Dewasa",
+      "price": 4000,
+      "description": "Tiket gerbang masuk utama untuk dewasa."
+    },
+    {
+      "id": "a_03",
+      "name": "Tiket Masuk Utama Anak",
+      "price": 3000,
+      "description": "Tiket gerbang masuk utama untuk anak-anak."
+    }
+  ]
+}

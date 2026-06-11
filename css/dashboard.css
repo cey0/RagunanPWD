@@ -201,7 +201,7 @@ nav {
     width: 100vw;
     /* Lebar penuh layar */
     height: 100%;
-    background-image: url('../html/background.jpg');
+    background-image: url('../assets/background.jpg');
     /* Ganti path gambar */
     background-size: cover;
     background-position: center;

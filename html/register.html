@@ -25,9 +25,9 @@
 
     <!-- Note: TopNavBar and Footer are suppressed for this transactional registration page as per rules -->
      <main
-        class="w-full max-w-5xl bg-surface rounded-xl shadow-sm border border-surface-dim overflow-hidden flex flex-col md:flex-row h-auto md:h-[800px]">
+        class="w-full max-w-4xl bg-surface rounded-xl shadow-sm border border-surface-dim overflow-hidden flex flex-col md:flex-row h-auto">
         <!-- Left Side: Inspiring Image Panel -->
-        <div class="hidden md:flex md:w-4/12 relative bg-surface-container-high">
+        <div class="hidden md:flex md:w-5/12 relative bg-surface-container-high">
             <img alt="A majestic male lion resting peacefully in the tall golden grass of a savanna. The lighting is soft and warm, capturing the golden hour of an African sunset. The scene evokes a sense of calm, wilderness, and profound natural beauty, perfectly aligning with a modern corporate yet tactile organic aesthetic in deep greens and warm sun yellows."
                 class="w-full h-full object-cover"
                 data-alt="A majestic male lion resting peacefully in the tall golden grass of a savanna. The lighting is soft and warm, capturing the golden hour of an African sunset. The scene evokes a sense of calm, wilderness, and profound natural beauty, perfectly aligning with a modern corporate yet tactile organic aesthetic in deep greens and warm sun yellows."
@@ -40,26 +40,28 @@
             </div>
         </div>
         <!-- Right Side: Registration Form -->
-        <div class="w-full md:w-7/12 p-lg md:p-xl flex flex-col justify-center">
-            <div class="mb-lg text-center md:text-left mt-5">
-                <span class="material-symbols-outlined text-primary text-[48px] mb-sm" data-icon="explore"
+        <div class="w-full md:w-7/12 p-6 md:p-8 flex flex-col justify-center">
+            <div class="mb-4 text-center md:text-left">
+                <span class="material-symbols-outlined text-primary text-[36px] mb-2" data-icon="explore"
                     style="font-variation-settings: 'FILL' 1;">explore</span>
                 <h2
-                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">
+                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">
                     Create Account</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Sign up to begin your discovery.</p>
             </div>
-            <form class="space-y-md">
+            <!-- Alert Message -->
+            <div id="alertMsg" class="hidden p-3 rounded-lg text-sm font-body-md mb-3 transition-all"></div>
+            <form id="registerForm" class="space-y-3">
                 <!-- Full Name Field -->
                 <div>
                     <label class="block font-label-md text-label-md text-on-surface mb-xs" for="fullName">Full
                         Name</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="material-symbols-outlined text-outline" data-icon="person">person</span>
                         </span>
                         <input
-                            class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
+                            class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
                             id="fullName" name="fullName" placeholder="Jane Doe" type="text" />
                     </div>
                 </div>
@@ -68,11 +70,11 @@
                     <label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email
                         Address</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="material-symbols-outlined text-outline" data-icon="mail">mail</span>
                         </span>
                         <input
-                            class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
+                            class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
                             id="email" name="email" placeholder="jane@example.com" type="email" />
                     </div>
                 </div>
@@ -81,11 +83,11 @@
                     <label class="block font-label-md text-label-md text-on-surface mb-xs"
                         for="password">Password</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
                         </span>
                         <input
-                            class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
+                            class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
                             id="password" name="password" placeholder="••••••••" type="password" />
                     </div>
                 </div>
@@ -94,23 +96,23 @@
                     <label class="block font-label-md text-label-md text-on-surface mb-xs" for="confirmPassword">Confirm
                         Password</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="material-symbols-outlined text-outline"
                                 data-icon="lock_reset">lock_reset</span>
                         </span>
                         <input
-                            class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
+                            class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border-2 border-surface-variant rounded-lg text-on-surface font-body-md placeholder-outline focus:border-primary focus:ring-0 transition-colors"
                             id="confirmPassword" name="confirmPassword" placeholder="••••••••" type="password" />
                     </div>
                 </div>
                 <!-- Terms Checkbox -->
-                <div class="flex items-start mt-sm">
+                <div class="flex items-start mt-2">
                     <div class="flex items-center h-5">
                         <input
                             class="w-6 h-6 bg-surface-container-lowest border-2 border-surface-variant rounded text-primary focus:ring-primary focus:ring-offset-background cursor-pointer"
                             id="terms" name="terms" type="checkbox" />
                     </div>
-                    <div class="ml-sm text-sm">
+                    <div class="ml-2 text-sm">
                         <label class="font-body-md text-body-md text-on-surface-variant cursor-pointer" for="terms">
                             I agree to the <a class="text-primary font-label-md hover:underline" href="#">Terms of
                                 Service</a> and <a class="text-primary font-label-md hover:underline" href="#">Privacy
@@ -120,18 +122,101 @@
                 </div>
                 <!-- Submit Button -->
                 <button
-                    class="w-full py-sm px-md bg-primary text-on-primary rounded-full font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-xs"
+                    class="w-full py-2 px-4 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-xs"
                     type="submit">
                     Create Account
                     <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                 </button>
             </form>
             
-            <p class="mt-lg text-center font-body-md text-body-md text-on-surface-variant">
-                Already have an account? <a class="text-primary font-label-md hover:underline" href="#">Sign In</a>
+            <p class="mt-4 text-center font-body-md text-body-md text-on-surface-variant">
+                Already have an account? <a class="text-primary font-label-md hover:underline" href="login.html">Sign In</a>
             </p>
         </div>
     </main>
+
+    <!-- Database -->
+    <script src="../js/db.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DB = window.BuanantaraDB;
+            const form = document.getElementById('registerForm');
+            const alertMsg = document.getElementById('alertMsg');
+
+            if (!DB) {
+                console.error("Database script (db.js) failed to load.");
+                return;
+            }
+
+            function showAlert(message, isError = true) {
+                alertMsg.className = 'p-3 rounded-lg text-sm font-body-md mb-3 transition-all';
+                if (isError) {
+                    alertMsg.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-300');
+                } else {
+                    alertMsg.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-300');
+                }
+                alertMsg.textContent = message;
+                alertMsg.classList.remove('hidden');
+            }
+
+            function hideAlert() {
+                alertMsg.classList.add('hidden');
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                hideAlert();
+
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const terms = document.getElementById('terms').checked;
+
+                // Validasi
+                if (!fullName || !email || !password || !confirmPassword) {
+                    showAlert('Semua field harus diisi!');
+                    return;
+                }
+
+                if (password.length < 6) {
+                    showAlert('Password minimal 6 karakter!');
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    showAlert('Password dan konfirmasi password tidak cocok!');
+                    return;
+                }
+
+                if (!terms) {
+                    showAlert('Kamu harus menyetujui Terms of Service dan Privacy Policy!');
+                    return;
+                }
+
+                // Submit
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="animate-pulse">Membuat akun...</span>';
+
+                try {
+                    await DB.registerUser({ fullName, email, password });
+                    showAlert('Akun berhasil dibuat! Mengalihkan ke halaman login...', false);
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                } catch (err) {
+                    showAlert(err.message);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Create Account <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>';
+                }
+            });
+
+            // Jika sudah login, redirect ke dashboard
+            const user = DB.getCurrentUser();
+            if (user) window.location.href = 'dashboard.html';
+        });
+    </script>
 </body>
 
 </html>

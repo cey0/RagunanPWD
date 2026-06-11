@@ -44,8 +44,10 @@
                     <h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Welcome Back</h1>
                     <p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your discovery.</p>
                 </div>
+                <!-- Alert Message -->
+                <div id="alertMsg" class="hidden p-3 rounded-lg text-sm font-body-md mb-3 transition-all"></div>
                 <!-- Form -->
-                <form action="#" class="space-y-md" method="POST">
+                <form id="loginForm" class="space-y-md">
                     <!-- Email Field -->
                     <div>
                         <label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email /
@@ -94,11 +96,76 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                     New to the park?
                     <a class="font-label-md text-label-md text-primary font-bold hover:text-secondary underline decoration-secondary decoration-2 underline-offset-4 transition-colors"
-                        href="#">Join the Discovery</a>
+                        href="register.html">Join the Discovery</a>
                 </p>
             </div>
         </div>
     </main>
+
+    <!-- Database -->
+    <script src="../js/db.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DB = window.BuanantaraDB;
+            const form = document.getElementById('loginForm');
+            const alertMsg = document.getElementById('alertMsg');
+
+            if (!DB) {
+                console.error("Database script (db.js) failed to load.");
+                return;
+            }
+
+            function showAlert(message, isError = true) {
+                alertMsg.className = 'p-3 rounded-lg text-sm font-body-md mb-3 transition-all';
+                if (isError) {
+                    alertMsg.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-300');
+                } else {
+                    alertMsg.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-300');
+                }
+                alertMsg.textContent = message;
+                alertMsg.classList.remove('hidden');
+            }
+
+            function hideAlert() {
+                alertMsg.classList.add('hidden');
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                hideAlert();
+
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+
+                // Validasi
+                if (!email || !password) {
+                    showAlert('Email dan password harus diisi!');
+                    return;
+                }
+
+                // Submit
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Signing in...';
+
+                try {
+                    await DB.loginUser({ email, password });
+                    showAlert('Login berhasil! Mengalihkan...', false);
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1000);
+                } catch (err) {
+                    showAlert(err.message);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Sign In';
+                }
+            });
+
+            // Jika sudah login, redirect ke dashboard
+            const user = DB.getCurrentUser();
+            if (user) window.location.href = 'dashboard.html';
+        });
+    </script>
 </body>
 
 </html>

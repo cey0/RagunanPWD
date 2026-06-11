@@ -1,15 +1,15 @@
-/* ============ VARIABEL CSS (SAMA PERSIS DENGAN DASHBOARD) ============ */
+/* ============ VARIABEL CSS ============ */
 :root {
-    --cream: #f5f0e8;
-    --dark: #1a1a14;
-    --green-deep: #1e3a2f;
-    --green-mid: #2d5a40;
-    --amber: #c8762a;
-    --amber-light: #e8952e;
-    --text-body: #3a3a30;
-    --text-muted: #7a7a6a;
+    --cream: #f4f3ed;
+    --dark: #112d21;
+    --green-deep: #112d21;
+    --green-mid: #254d32;
+    --amber: #b05c24;
+    --amber-light: #d8813a;
+    --text-body: #112d21;
+    --text-muted: #5e6b60;
     --white: #ffffff;
-    --border: #e0d8cc;
+    --border: #dfdec9;
 }
 
 * {
@@ -135,18 +135,16 @@ nav {
 
 /* ============ PROFILE HERO ============ */
 .profile-hero {
-    background: 
-        linear-gradient(135deg, rgba(245, 240, 232, 0.4), rgba(232, 224, 208, 0.4)),
-        url('../html/rainforest.jpg'); /* Ganti dengan gambar kamu */
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    padding: 40px;
+    background: linear-gradient(to right, rgba(17, 45, 33, 0.05), rgba(17, 45, 33, 0.15)), url('../assets/background.jpg') center/cover no-repeat;
+    border-radius: 12px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
-    border: 1px solid var(--border, #e0d8cc);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
 }
 .profile-hero::before {
     content: '';
@@ -217,9 +215,9 @@ nav {
     display: flex;
     gap: 0;
     background: var(--white);
-    border-radius: 16px;
-    padding: 20px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border);
     position: relative;
     z-index: 1;
@@ -227,7 +225,7 @@ nav {
 
 .stat-box {
     text-align: center;
-    padding: 0 30px;
+    padding: 0 24px;
     border-right: 1px solid var(--border);
 }
 
@@ -236,9 +234,9 @@ nav {
 }
 
 .stat-box .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
     color: var(--amber);
     line-height: 1;
 }
